@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@digi/arbetsformedlingen": "^27.0.0",
+    "@digi/arbetsformedlingen-react": "^27.0.0",
+    "axios": "^1.7.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
