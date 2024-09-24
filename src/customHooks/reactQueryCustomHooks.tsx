@@ -24,13 +24,11 @@ export const useFetchAds = () => {
   return { isPending, isError, data, error };
 };
 
-export const useFetchSingleAd = () => {
+export const useFetchSingleAd = (id: string) => {
   const { isPending, data, isError, error } = useQuery<Ad>({
-    queryKey: ['ads'],
+    queryKey: ['ads', id],
     queryFn: async () => {
-      const { data } = await customFetch.get<Ad>(
-        '/ad/558bb90eab940f96b48d9ac49d82b602'
-      );
+      const { data } = await customFetch.get<Ad>(`/ad/${id}`);
 
       console.log(data);
 

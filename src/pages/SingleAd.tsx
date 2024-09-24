@@ -1,7 +1,9 @@
 import { useFetchSingleAd } from '../customHooks/reactQueryCustomHooks';
+import { useParams } from 'react-router-dom';
 
 const SingleAd = () => {
-  const { data, isError, error, isPending } = useFetchSingleAd();
+  const { id } = useParams<{ id: string }>();
+  const { data, error, isPending } = useFetchSingleAd(id!);
 
   if (isPending) {
     return <h2>Loading...</h2>;
@@ -12,10 +14,10 @@ const SingleAd = () => {
   }
 
   return (
-    <div>
+    <section>
       <h2>{data?.headline}</h2>
       <p>{data?.brief}</p>
-    </div>
+    </section>
   );
 };
 export default SingleAd;

@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { SingleAd, Landing, HomeLayout } from './pages';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import AdsList from './pages/AdsList';
 
 const router = createBrowserRouter([
   {
@@ -8,9 +8,13 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     children: [
       {
-        // path: '/ads',
         index: true,
+        // path: '/ads',
         element: <Landing />,
+      },
+      {
+        path: '/ads',
+        element: <AdsList />,
       },
       {
         path: 'ad/:id',

@@ -1,12 +1,13 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 
 const HomeLayout = () => {
   return (
     <>
-      <h1>Hej</h1>
-      <Link to={'/ads'}>Test</Link>
-      <Link to={'/ad/:id'}>En ad</Link>
+      <Header />
       <Outlet />
+      <Footer />
     </>
   );
 };
