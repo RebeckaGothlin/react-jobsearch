@@ -1,37 +1,33 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-
-type Ad = {
-  id: string;
-  headline: string;
-  brief: string;
-};
+import { useFetchAds } from '../customHooks/reactQueryCustomHooks';
 
 const Landing = () => {
-  const [ads, setAds] = useState<Ad[]>([]);
-  const url = 'https://links.api.jobtechdev.se/joblinks';
+  const { isPending, data, error } = useFetchAds();
 
-  const fetchAds = async () => {
-    const resp = await axios(url);
+  if (isPending) {
+    return <p>Loading....</p>;
+  }
 
-    console.log(resp.data.hits);
+  //   if (isError) {
+  //     return <h1>Error!!</h1>;
+  //   }
 
-    const res = resp.data.hits;
-    setAds(res);
-  };
+  if (error) {
+    return <h1>Error!! {error.message} </h1>;
+  }
 
-  useEffect(() => {
-    fetchAds();
-  }, []);
+  if (!data || !data.hits || data.hits.length === 0) {
+    return <h1>WHAT THE F...!</h1>;
+  }
 
   return (
     <div>
-      {ads.map((ad) => {
-        const { id, headline, brief } = ad;
+      {data?.hits.map((ad) => {
+        const { id, headline, brief, publication_date } = ad;
         return (
           <div key={id}>
             <h2>{headline}</h2>
             <p>{brief}</p>
+            <p>{publication_date}</p>
           </div>
         );
       })}
