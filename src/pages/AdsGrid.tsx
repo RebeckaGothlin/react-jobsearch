@@ -1,23 +1,11 @@
-import { Link } from 'react-router-dom';
 import { useFetchAds } from '../customHooks/reactQueryCustomHooks';
 import {
   InfoCardHeadingLevel,
-  InfoCardMultiHeadingLevel,
-  InfoCardMultiType,
   InfoCardType,
   InfoCardVariation,
-  LayoutBlockVariation,
-  LayoutContainerVariation,
   TypographyVariation,
 } from '@digi/arbetsformedlingen';
-import {
-  DigiInfoCard,
-  DigiInfoCardMulti,
-  DigiInfoCardMultiContainer,
-  DigiLayoutBlock,
-  DigiLayoutContainer,
-  DigiTypography,
-} from '@digi/arbetsformedlingen-react';
+import { DigiInfoCard, DigiTypography } from '@digi/arbetsformedlingen-react';
 
 const AdsList = () => {
   const { isPending, data, error } = useFetchAds();
@@ -43,7 +31,7 @@ const AdsList = () => {
     <DigiTypography afVariation={TypographyVariation.SMALL}>
       <article>
         {data?.hits.map((ad) => {
-          const { id, headline, brief, publication_date } = ad;
+          const { id, headline, brief } = ad;
           return (
             <DigiInfoCard
               afHeading={headline}

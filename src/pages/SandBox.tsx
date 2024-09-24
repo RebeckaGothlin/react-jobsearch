@@ -1,39 +1,29 @@
-import { useFetchAds } from '../customHooks/reactQueryCustomHooks';
 import {
   LinkVariation,
   TypographyTimeVariation,
 } from '@digi/arbetsformedlingen';
 import {
   DigiLink,
+  DigiNavigationPagination,
   DigiTypography,
   DigiTypographyTime,
 } from '@digi/arbetsformedlingen-react';
+import { useLoaderData } from 'react-router-dom';
+import { Ad } from '../models/types';
 
 const SandBox = () => {
-  const { isPending, data, error } = useFetchAds();
-
-  if (isPending) {
-    return <p>Loading....</p>;
-  }
-
-  if (error) {
-    return <h1>Error!! {error.message} </h1>;
-  }
-
-  if (!data || !data.hits || data.hits.length === 0) {
-    return <h1>WHAT THE F...!</h1>;
-  }
+  const data = useLoaderData() as Ad[];
 
   return (
     <>
       <div className='card-container'>
-        {data?.hits.map((ad) => {
+        {data.map((ad) => {
           const {
             id,
             headline,
             publication_date,
             employer,
-            workplace_addresses,
+            workplace_address,
           } = ad;
 
           return (
@@ -49,11 +39,7 @@ const SandBox = () => {
                 </h3>
                 <h4>
                   {' '}
-                  {employer?.name}
-                  {workplace_addresses.map((city) => {
-                    const { municipality } = city;
-                    return <div key={municipality}> {municipality}</div>;
-                  })}
+                  {employer?.name} - {workplace_address?.municipality}
                 </h4>
               </div>
               <div className='card-content'>
@@ -71,6 +57,10 @@ const SandBox = () => {
             </DigiTypography>
           );
         })}
+        <DigiNavigationPagination
+          afTotalPages={6}
+          afInitActivePage={1}
+        ></DigiNavigationPagination>
       </div>
     </>
   );

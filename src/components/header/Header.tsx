@@ -3,6 +3,7 @@ import {
   DigiHeaderNavigation,
   DigiHeaderNavigationItem,
 } from '@digi/arbetsformedlingen-react';
+import { navLinks } from '../../helpers/linksArray';
 
 const Header = () => {
   return (
@@ -20,15 +21,17 @@ const Header = () => {
             afCloseButtonAriaLabel='Stäng meny'
             afNavAriaLabel='Huvudmeny'
           >
-            <DigiHeaderNavigationItem afCurrentPage={true}>
-              <a href='/'>Mina bokningar</a>
-            </DigiHeaderNavigationItem>
-            <DigiHeaderNavigationItem>
-              <a href={'/ads'}>Alla jobbannonser</a>
-            </DigiHeaderNavigationItem>
-            <DigiHeaderNavigationItem>
-              <a href='/sand'>LEKLÅDA</a>
-            </DigiHeaderNavigationItem>
+            {navLinks.map((link) => {
+              const isActive = window.location.pathname === link.href;
+              return (
+                <DigiHeaderNavigationItem
+                  afCurrentPage={isActive}
+                  key={link.label}
+                >
+                  <a href={link.href}>{link.label}</a>
+                </DigiHeaderNavigationItem>
+              );
+            })}
           </DigiHeaderNavigation>
         </div>
       </DigiHeader>

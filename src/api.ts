@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const BASE_URL = 'https://jobsearch.api.jobtechdev.se';
+
 const customFetch = axios.create({
-  baseURL: 'https://links.api.jobtechdev.se',
+  baseURL: BASE_URL,
 });
 
 export default customFetch;

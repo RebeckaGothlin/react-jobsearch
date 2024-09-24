@@ -1,36 +1,28 @@
 import { useQuery } from '@tanstack/react-query';
 import customFetch from '../api';
+import { Ad, AdsResponse } from '../models/types';
 
-// type WorkplaceAddress = {
-//   municipality: string;
+// export const useFetchAds = () => {
+//   const { isPending, data, isError, error } = useQuery<AdsResponse>({
+//     queryKey: ['ads'],
+//     queryFn: async () => {
+//       const { data } = await customFetch.get<AdsResponse>(`/search?q=`);
+
+//       console.log(data, 'from useFetchAds');
+
+//       return data;
+//     },
+//   });
+//   return { isPending, isError, data, error };
 // };
-
-type Employer = {
-  name: string;
-};
-
-type Ad = {
-  id: string;
-  headline: string;
-  brief: string;
-  publication_date: string;
-  employer?: Employer;
-  workplace_addresses: {
-    municipality: string;
-  }[];
-};
-
-type AdsResponse = {
-  hits: Ad[];
-};
 
 export const useFetchAds = () => {
   const { isPending, data, isError, error } = useQuery<AdsResponse>({
     queryKey: ['ads'],
     queryFn: async () => {
-      const { data } = await customFetch.get<AdsResponse>('/joblinks');
+      const { data } = await customFetch.get<AdsResponse>(`/search?q=`);
 
-      console.log(data.hits);
+      console.log(data, 'from useFetchAds');
 
       return data;
     },
@@ -43,8 +35,6 @@ export const useFetchSingleAd = (id: string) => {
     queryKey: ['ads', id],
     queryFn: async () => {
       const { data } = await customFetch.get<Ad>(`/ad/${id}`);
-
-      console.log(data);
 
       return data;
     },

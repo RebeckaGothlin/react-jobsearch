@@ -3,26 +3,33 @@ import {
   DigiLayoutBlock,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
-import { useFetchSingleAd } from '../customHooks/reactQueryCustomHooks';
-import { useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+import dompurify from 'dompurify';
+import { Ad } from '../models/types';
 
 const SingleAd = () => {
-  const { id } = useParams<{ id: string }>();
-  const { data, error, isPending } = useFetchSingleAd(id!);
+  const data = useLoaderData() as Ad;
 
-  if (isPending) {
-    return <h2>Loading...</h2>;
-  }
+  const formatDescription = (text: string | undefined): string => {
+    if (!text) return '';
+    return text.replace(/\n/g, '<br />');
+  };
 
-  if (error) {
-    return <h2>{error.message}</h2>;
-  }
+  const text = data?.description.text;
+
+  const sanitizedText = dompurify.sanitize(text ? text : '');
 
   return (
     <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
       <DigiTypography>
         <h2>{data?.headline}</h2>
-        <p>{data?.brief}</p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: formatDescription(sanitizedText),
+          }}
+        />
+        <h1>{data?.workplace_address?.municipality}</h1>
+        <h3>{data?.salary_type.label}</h3>
       </DigiTypography>
     </DigiLayoutBlock>
   );

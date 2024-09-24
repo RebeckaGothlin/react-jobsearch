@@ -1,20 +1,11 @@
-import { Link } from 'react-router-dom';
 import { useFetchAds } from '../customHooks/reactQueryCustomHooks';
 import {
   InfoCardMultiHeadingLevel,
   InfoCardMultiType,
-  LayoutBlockVariation,
-  LayoutContainerVariation,
-  TypographyTimeVariation,
-  TypographyVariation,
 } from '@digi/arbetsformedlingen';
 import {
   DigiInfoCardMulti,
   DigiInfoCardMultiContainer,
-  DigiLayoutBlock,
-  DigiLayoutContainer,
-  DigiTypography,
-  DigiTypographyTime,
 } from '@digi/arbetsformedlingen-react';
 
 const AdsList = () => {
@@ -34,35 +25,12 @@ const AdsList = () => {
 
   return (
     <>
-      {/* <DigiLayoutContainer afVariation={LayoutContainerVariation.STATIC}>
-        <DigiLayoutBlock
-          afVariation={LayoutBlockVariation.PRIMARY}
-          afMarginTop={true}
-        >
-          <DigiTypography afVariation={TypographyVariation.SMALL}>
-            <article>
-              {data?.hits.map((ad) => {
-                const { id, headline, brief, publication_date } = ad;
-                return (
-                  <Link to={`/ad/${id}`} key={id}>
-                    <h2>{headline}</h2>
-                    <p>{brief}</p>
-                    <DigiTypographyTime
-                      afVariation={TypographyTimeVariation.PRIMARY}
-                      afDateTime={publication_date}
-                    ></DigiTypographyTime>
-                  </Link>
-                );
-              })}
-            </article>
-          </DigiTypography>
-        </DigiLayoutBlock>
-      </DigiLayoutContainer> */}
       <DigiInfoCardMultiContainer>
         {data?.hits.map((ad) => {
-          const { id, headline, brief, publication_date } = ad;
+          const { id, headline } = ad;
           return (
             <DigiInfoCardMulti
+              key={id}
               afHeading={headline}
               afHeadingLevel={InfoCardMultiHeadingLevel.H2}
               afType={InfoCardMultiType.RELATED}
