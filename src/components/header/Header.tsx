@@ -27,7 +27,7 @@ const Header = () => {
               <a href={'/ads'}>Alla jobbannonser</a>
             </DigiHeaderNavigationItem>
             <DigiHeaderNavigationItem>
-              <a href='/'>Kontakt</a>
+              <a href='/sand'>LEKLÅDA</a>
             </DigiHeaderNavigationItem>
           </DigiHeaderNavigation>
         </div>

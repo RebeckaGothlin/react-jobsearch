@@ -1,3 +1,8 @@
+import { LayoutBlockVariation } from '@digi/arbetsformedlingen';
+import {
+  DigiLayoutBlock,
+  DigiTypography,
+} from '@digi/arbetsformedlingen-react';
 import { useFetchSingleAd } from '../customHooks/reactQueryCustomHooks';
 import { useParams } from 'react-router-dom';
 
@@ -14,10 +19,12 @@ const SingleAd = () => {
   }
 
   return (
-    <section>
-      <h2>{data?.headline}</h2>
-      <p>{data?.brief}</p>
-    </section>
+    <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
+      <DigiTypography>
+        <h2>{data?.headline}</h2>
+        <p>{data?.brief}</p>
+      </DigiTypography>
+    </DigiLayoutBlock>
   );
 };
 export default SingleAd;

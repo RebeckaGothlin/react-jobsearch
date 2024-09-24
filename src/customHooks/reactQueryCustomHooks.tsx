@@ -1,11 +1,23 @@
 import { useQuery } from '@tanstack/react-query';
 import customFetch from '../api';
 
+// type WorkplaceAddress = {
+//   municipality: string;
+// };
+
+type Employer = {
+  name: string;
+};
+
 type Ad = {
   id: string;
   headline: string;
   brief: string;
   publication_date: string;
+  employer?: Employer;
+  workplace_addresses: {
+    municipality: string;
+  }[];
 };
 
 type AdsResponse = {
@@ -17,6 +29,8 @@ export const useFetchAds = () => {
     queryKey: ['ads'],
     queryFn: async () => {
       const { data } = await customFetch.get<AdsResponse>('/joblinks');
+
+      console.log(data.hits);
 
       return data;
     },

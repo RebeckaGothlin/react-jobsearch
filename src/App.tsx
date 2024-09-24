@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { SingleAd, Landing, HomeLayout } from './pages';
+import { SingleAd, Landing, HomeLayout, SandBox } from './pages';
 import AdsList from './pages/AdsList';
+import AdsGrid from './pages/AdsGrid';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: 'ad/:id',
         element: <SingleAd />,
+      },
+      {
+        path: '/sand',
+        element: <SandBox />,
       },
     ],
   },

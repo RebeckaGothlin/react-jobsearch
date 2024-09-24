@@ -1,2 +1,12 @@
 @import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
 @import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css';
+
+:root {
+  margin: --digi--global--spacing--smallest-6;
+  margin: --digi--global--spacing--largest-4;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
