@@ -61,7 +61,7 @@ return (
             afVariation={LayoutBlockVariation.PRIMARY}
             afVerticalPadding={true}>
             <p>då kommer annonsen här? Eller snarare sökresultat, men vi låtsas att det är en enskild annons... kanske ska även nedanstående hamna i en DigiBlock för att bli snyggt. De gillar ju lager på lager. </p>
-            
+
             <div>företagets logo 
                 <h1>rubrik med jobbtitel</h1> 
                 <h2>företagsnamn</h2> 
@@ -109,7 +109,7 @@ return (
                         afType={ButtonType.BUTTON}
 	                    afVariation={ButtonVariation.PRIMARY}
 	                    afFullWidth={false}>
-	                    En knapp
+	                    Skicka ansökan
                     </DigiButton>
                     </div>
                     </div>

@@ -7,6 +7,10 @@
   --digi--color--text--inverted: #ffffff;
   --digi--color--background--inverted-1: darkgreen;
   --digi--color--border--secondary: darkgreen;
+  --digi--color--background--inverted-4: #b7ee4a;
+  --digi--color--text--link:green;
+  --digi--color--text--link-hover:hotpink;
+  --digi--color--text--link-visited: darkslategrey;
 
 }
 
