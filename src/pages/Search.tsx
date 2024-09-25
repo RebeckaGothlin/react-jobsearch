@@ -57,37 +57,58 @@ return (
 
             <DigiLayoutBlock
             afVariation={LayoutBlockVariation.PRIMARY}>
-            <p>då kommer annonsen här?</p>
+            <p>då kommer annonsen här? Eller snarare sökresultat, men vi låtsas att det är en enskild annons... </p>
+            <div>företagets logo 
+                <h1>rubrik med jobbtitel</h1> 
+                <h2>företagsnamn</h2> 
+                <h3>Branch</h3> 
+                <h3>Kommun: Kommun</h3> 
+                <p>Omfattning: Heltid/Deltid</p> 
+                <p>Varaktighet: Tillsvidare</p> 
+                <p>Anställningsform: blablabla</p>
+                </div>
             <DigiInfoCard
-                afHeading="Jag är ett infokort"
+                afHeading="Kvalifikationer"
                 afHeadingLevel={InfoCardHeadingLevel.H2}
                 afType={InfoCardType.TIP}
-                afLinkHref="Frivillig länk"	
-                afLinkText="Frivillig länktext"	
                 afVariation={InfoCardVariation.SECONDARY}	
                 afSize={InfoCardSize.STANDARD}
             >
-                <p>
-                    Det här är bara ord för att illustrera hur det ser ut med text inuti. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Suspendisse commodo egestas elit in consequat. Proin in ex consectetur,
-                    laoreet augue sit amet, malesuada tellus.
-                </p>
+                <div>
+                    <h3>Arbetslivserfarenhet</h3>
+                    <h4>Krav</h4>
+                    <ul><li>Lista med krav på erfarenheter</li></ul>
+                    <h3>Körkort</h3> 
+                    <h4>Krav</h4>
+                    <ul><li>Lista med krav på behörigheter och ev egen bil</li></ul>
+                </div>
 
             </DigiInfoCard>
 
-            <p>Och här fortsätter annonsen</p>
+            <p>Och här fortsätter annonsen med Om Jobbet, Om anställningen, Anställningsvillkor, Var ligger arbetsplatsen, Arbetsgivaren och adress. Sedan finns även möjlighet att dela annonsen via mail, som de stavar "mejl", fejsbonk, X, LinkedIn och skriva ut. Längst ner Annons-Id och datum/klockslag då den är publicerad.</p>
             
             <DigiInfoCard
-                afHeading="Rubrik"
+                afHeading="Sök Jobbet"
                 afHeadingLevel={InfoCardHeadingLevel.H2}
                 afType={InfoCardType.RELATED}
-                afLinkHref="länk till nåt bra"
-                afLinkText="Följ länken vidare/länktext"
                 afVariation={InfoCardVariation.SECONDARY}
                 afBorderPosition={InfoCardBorderPosition.LEFT}
                 >
             
-                    <p>Textinnehåll i info card som ska ligga till höger i sidan</p>
+                    <div>
+                        <p>Ansök senast - in med slutdatum från annonsen (och antal dagar kvar)</p>
+                        <span>Ange referens <strong>nån referens</strong> i din ansökan</span>
+                    <div>
+                    <h3>Ansök via arbetsgivarens webbsida - extern länk</h3>
+                    <DigiButton
+	                    afSize={ButtonSize.MEDIUM}
+                        afType={ButtonType.BUTTON}
+	                    afVariation={ButtonVariation.PRIMARY}
+	                    afFullWidth={false}>
+	                    En knapp
+                    </DigiButton>
+                    </div>
+                    </div>
 
                 </DigiInfoCard>
                 </DigiLayoutBlock>

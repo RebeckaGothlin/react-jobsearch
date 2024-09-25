@@ -10,3 +10,15 @@
   display: flex;
   flex-direction: column;
 }
+ /* gömmer logo - snodde koden av Annika på Discord */
+.digi-logo__img {
+  background-image: url('/src/assets/BoLoGo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 44px; 
+  height: 44px;
+}
+
+.digi-logo svg {
+  display: none; 
+}
