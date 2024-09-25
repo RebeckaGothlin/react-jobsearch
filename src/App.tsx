@@ -1,11 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { SingleAd, Landing, HomeLayout, SandBox } from './pages';
+import { SingleAd, Landing, HomeLayout, SandBox} from './pages';
 import AdsList from './pages/AdsList';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { loader as sandBoxLoader } from './loaders/sandboxLoader';
 import { loader as singleAdLoader } from './loaders/singleAdLoader';
+import Search from './pages/Search';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         path: '/sand',
         element: <SandBox />,
         loader: sandBoxLoader,
+      },
+      {
+        path: '/search',
+        element: <Search />,
       },
     ],
   },

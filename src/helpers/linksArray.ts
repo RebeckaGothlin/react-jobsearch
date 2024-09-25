@@ -7,4 +7,8 @@ export const navLinks = [
     href: '/sand',
     label: 'LEKLÅDAN',
   },
+  {
+    href: '/search',
+    label: 'SEARCH',
+  }
 ];
