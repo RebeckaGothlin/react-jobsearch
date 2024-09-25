@@ -10,7 +10,9 @@ return (
             <DigiLayoutBlock
             afVariation={LayoutBlockVariation.PROFILE}
             afMarginBottom={true}
-            afMarginTop={true}>
+            afMarginTop={true}
+            afVerticalPadding={true}
+            >
             <DigiFormInputSearch
                 afLabel="Sök"
                 afVariation={FormInputSearchVariation.MEDIUM}
@@ -56,8 +58,10 @@ return (
                     <DigiTypography>
 
             <DigiLayoutBlock
-            afVariation={LayoutBlockVariation.PRIMARY}>
-            <p>då kommer annonsen här? Eller snarare sökresultat, men vi låtsas att det är en enskild annons... </p>
+            afVariation={LayoutBlockVariation.PRIMARY}
+            afVerticalPadding={true}>
+            <p>då kommer annonsen här? Eller snarare sökresultat, men vi låtsas att det är en enskild annons... kanske ska även nedanstående hamna i en DigiBlock för att bli snyggt. De gillar ju lager på lager. </p>
+            
             <div>företagets logo 
                 <h1>rubrik med jobbtitel</h1> 
                 <h2>företagsnamn</h2> 

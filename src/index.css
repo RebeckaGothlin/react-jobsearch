@@ -4,12 +4,21 @@
 :root {
   margin: --digi--global--spacing--smallest-6;
   margin: --digi--global--spacing--largest-4;
+  --digi--color--text--inverted: #ffffff;
+  --digi--color--background--inverted-1: darkgreen;
+  --digi--color--border--secondary: darkgreen;
+
 }
 
 .header-container {
   display: flex;
   flex-direction: column;
 }
+/* Texten i sökblocket, men bör ändras även utan detta anser jag */
+.sc-digi-form-label {
+  color: var(--digi--color--text--inverted);
+}
+
  /* gömmer logo - snodde koden av Annika på Discord */
 .digi-logo__img {
   background-image: url('/src/assets/BoLoGo.png');
