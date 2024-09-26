@@ -1,6 +1,8 @@
 export type Ad = {
   id: string;
+  external_id: string;
   headline: string;
+  logo_url: string;
   brief: string;
   description: {
     text: string;
@@ -20,4 +22,9 @@ export type Ad = {
 
 export type AdsResponse = {
   hits: Ad[];
+};
+
+export type Log = {
+  name: string;
+  type: string;
 };

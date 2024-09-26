@@ -2,7 +2,7 @@ import { LoaderFunctionArgs } from 'react-router-dom';
 import { customFetch } from '../api';
 import { Ad } from '../models/types';
 
-const url = (id: string) => `/ad/${id}`;
+const url = (id: string) => `/search/`;
 
 export const loader = async ({
   params,

@@ -1,4 +1,4 @@
-import customFetch from '../api';
+import { customFetch } from '../api';
 import { Ad, AdsResponse } from '../models/types';
 
 const url = '/search?q=';

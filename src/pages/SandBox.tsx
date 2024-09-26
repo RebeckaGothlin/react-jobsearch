@@ -24,6 +24,7 @@ const SandBox = () => {
             publication_date,
             employer,
             workplace_address,
+            logo_url,
           } = ad;
 
           return (
@@ -36,6 +37,7 @@ const SandBox = () => {
                   >
                     {headline}
                   </DigiLink>
+                  {logo_url ? <img src={logo_url} alt='' /> : <p>Ingen bild</p>}
                 </h3>
                 <h4>
                   {' '}

@@ -8,10 +8,15 @@
   --digi--color--background--inverted-1: darkgreen;
   --digi--color--border--secondary: darkgreen;
   --digi--color--background--inverted-4: #b7ee4a;
-  --digi--color--text--link:green;
-  --digi--color--text--link-hover:hotpink;
+  --digi--color--text--link: green;
+  --digi--color--text--link-hover: hotpink;
   --digi--color--text--link-visited: darkslategrey;
+}
 
+.digi-form-filter-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: 'wrap';
 }
 
 .header-container {
@@ -23,15 +28,31 @@
   color: var(--digi--color--text--inverted);
 }
 
- /* gömmer logo - snodde koden av Annika på Discord */
+/* gömmer logo - snodde koden av Annika på Discord */
 .digi-logo__img {
   background-image: url('/src/assets/BoLoGo.png');
   background-size: contain;
   background-repeat: no-repeat;
-  width: 44px; 
+  width: 44px;
   height: 44px;
 }
 
 .digi-logo svg {
-  display: none; 
+  display: none;
+}
+
+.digi-form-filter button {
+  --digi--color--background--primary: var(
+    --digi--color--background--inverted-4
+  );
+}
+
+[afFilterButtonText] {
+  --digi--color--background--primary: var(
+    --digi--color--background--inverted-4
+  );
+}
+
+.digi-button:hover {
+  background-color: var(--digi--color--text--link-hover);
 }

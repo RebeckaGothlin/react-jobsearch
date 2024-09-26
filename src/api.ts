@@ -6,4 +6,4 @@ const customFetch = axios.create({
   baseURL: BASE_URL,
 });
 
-export default customFetch;
+export { customFetch };
