@@ -7,17 +7,15 @@
   --digi--color--text--primary: #333333;
   --digi--color--text--inverted: #ffffff;
   --digi--color--background--inverted-1: rgb(0, 117, 119);
+  --digi--color--background--inverted-2: rgb(0, 117, 119, 0.2);
+  --digi--color--background--inverted-3: rgba(184, 184, 184, 0.2);
   --digi--color--border--secondary: rgb(0, 117, 119);
   --digi--color--background--inverted-4: #fa9e0c;
   --digi--color--text--link: rgb(0, 117, 119);
-  --digi--color--text--link-hover: hotpink;
+  --digi--color--text--link-hover: rgb(255, 172, 71);
   --digi--color--text--link-visited: darkslategrey;
   --digi--color--icons--primary: #333;
 }
-
-/* Sidan bör byggas upp med grid - header på plats där den är, sökrutan under och sedan sökresultat-listan under det. När man sedan öppnar en enskild annons flyttas resultatlistan till vänster och annonsen öppnas bredvid. Alternativt att listan hamnar till vänster direkt och man antingen har en placeholdersida tills en annons har valts eller att första annonsen visas automatiskt. */
-
-/* under sökrutan läggs digi-tagg till för att visa vilka filter som är valda */
 
 .digi-form-filter-container {
   display: flex;
@@ -29,54 +27,87 @@
   display: flex;
   flex-direction: column;
 }
-
+/* navigation link item */ 
 .sc-digi-header-navigation-item {
  background-color: 2px solid var(--digi--color--background--inverted-4);
 }
 
+/* navigation link field */
+.sc-digi-header-navigation-h .digi-header-navigation__inner.sc-digi-header-navigation {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  background-color: var(--digi--color--background--inverted-2);
+}
+
+/* line under navigation link in header */
+.digi-header-navigation-item--active.sc-digi-header-navigation-item-s > a {
+  font-weight: bold;
+  box-shadow: inset 0 -4px 0 0 var(--digi--color--background--inverted-4);
+}
+
+/* Search form label*/
 .sc-digi-form-label {
   color: var(--digi--color--text--inverted);
 }
 
+/* search button */
 .sc-digi-button-h .digi-button--variation-primary.sc-digi-button {
   background: var(--digi--color--background--inverted-4);
   color: var(--digi--color--text--primary);
   border: none;
 }
-
+/* search button hover state*/
 .sc-digi-button-h .digi-button--variation-primary.sc-digi-button:hover {
   background: var(--digi--color--text--link-hover);
   color: var(--digi--color--text--primary);
 }
 
+/* icon in search button */
 .sc-digi-button svg {
   color: var(--digi--color--text--primary);
 }
+/* search filter buttons */
+.digi-form-filter i.digi-form-filter__toggle-button-indicator--active::before {
+  background-color: var(--digi--color--background--inverted-4) !important;
+}
 
-/* gömmer logo - snodde koden av Annika på Discord */
-.digi-logo__img {
-  background-image: url('/src/assets/BoLoGo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
+/* checkboxes in filter buttons */
+.digi-form-checkbox__box {
+  background-color: var(--digi--color--background--inverted-4) !important;
+}
+
+
+/* info card with left border*/
+.sc-digi-info-card-h .digi-info-card--border-left.sc-digi-info-card {
+  border-width: 0 0 0 10px;
+  border-color: var(--digi--color--background--inverted-4);
+}
+
+.logo {
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+}
+
+img {
   width: 44px;
   height: 44px;
 }
-
+/* hide logo*/
 .digi-logo svg {
   display: none;
+}
+
+/* end logo hiding*/
+
+/* info card in ad */
+.sc-digi-info-card-h .digi-info-card__content.sc-digi-info-card {
+  background-color: var(--digi--color--background--inverted-3);
 }
 
 @media screen and (min-width: 1024px) {
   .digi-form-filter button {
     margin-right: var(--digi--margin--smaller);
   }
-}
-
-
-.digi-form-filter i.digi-form-filter__toggle-button-indicator--active::before {
-  background-color: var(--digi--color--background--inverted-4) !important;
-}
-
-.digi-form-checkbox__box {
-  background-color: var(--digi--color--background--inverted-4) !important;
 }

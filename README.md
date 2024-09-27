@@ -8,3 +8,25 @@ Denna uppgift består av att ni behöver skapa er egna platsbank. Ni får lägga
 
 Autocomplete URL
 https://taxonomy.api.jobtechdev.se/v1/taxonomy/suggesters/autocomplete?query-string=
+
+
+# Saker att lägga till
+
+## Grid
+Sidan bör byggas upp med grid - header på plats där den är, sökrutan under och sedan sökresultat-listan under det.  
+När man sedan öppnar en enskild annons flyttas resultatlistan till vänster och annonsen öppnas bredvid.  
+Alternativt att listan hamnar till vänster direkt och man antingen har en placeholdersida tills en annons har valts eller att första annonsen visas automatiskt. 
+
+## DigiTagg
+Under sökrutan läggs DigiTagg till för att visa vilka filter som är valda
+
+## Färgval
+Vi får gå igenom vad vi vill ha för färgschema, kontrollera att det håller AA eller ännu hellre AAA, och justera tills vi får bästa kontrast och användarvänlighet. 
+Titta igenom vilka av Tokens vi behöver använda oss av och justera färgvärde på.
+Max antal färger
+
+## Navigering
+Vad ska ingå i navigeringen? Vilka olika sidor ska man kunna komma till?
+
+# ReadMe
+Skriv en prydlig ReadMe som dokumenterar projektet
