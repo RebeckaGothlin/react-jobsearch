@@ -4,14 +4,20 @@
 :root {
   margin: --digi--global--spacing--smallest-6;
   margin: --digi--global--spacing--largest-4;
+  --digi--color--text--primary: #333333;
   --digi--color--text--inverted: #ffffff;
-  --digi--color--background--inverted-1: darkgreen;
-  --digi--color--border--secondary: darkgreen;
-  --digi--color--background--inverted-4: #b7ee4a;
-  --digi--color--text--link: green;
+  --digi--color--background--inverted-1: rgb(0, 117, 119);
+  --digi--color--border--secondary: rgb(0, 117, 119);
+  --digi--color--background--inverted-4: #fa9e0c;
+  --digi--color--text--link: rgb(0, 117, 119);
   --digi--color--text--link-hover: hotpink;
   --digi--color--text--link-visited: darkslategrey;
+  --digi--color--icons--primary: #333;
 }
+
+/* Sidan bör byggas upp med grid - header på plats där den är, sökrutan under och sedan sökresultat-listan under det. När man sedan öppnar en enskild annons flyttas resultatlistan till vänster och annonsen öppnas bredvid. Alternativt att listan hamnar till vänster direkt och man antingen har en placeholdersida tills en annons har valts eller att första annonsen visas automatiskt. */
+
+/* under sökrutan läggs digi-tagg till för att visa vilka filter som är valda */
 
 .digi-form-filter-container {
   display: flex;
@@ -23,9 +29,28 @@
   display: flex;
   flex-direction: column;
 }
-/* Texten i sökblocket, men bör ändras även utan detta anser jag */
+
+.sc-digi-header-navigation-item {
+ background-color: 2px solid var(--digi--color--background--inverted-4);
+}
+
 .sc-digi-form-label {
   color: var(--digi--color--text--inverted);
+}
+
+.sc-digi-button-h .digi-button--variation-primary.sc-digi-button {
+  background: var(--digi--color--background--inverted-4);
+  color: var(--digi--color--text--primary);
+  border: none;
+}
+
+.sc-digi-button-h .digi-button--variation-primary.sc-digi-button:hover {
+  background: var(--digi--color--text--link-hover);
+  color: var(--digi--color--text--primary);
+}
+
+.sc-digi-button svg {
+  color: var(--digi--color--text--primary);
 }
 
 /* gömmer logo - snodde koden av Annika på Discord */
@@ -41,18 +66,17 @@
   display: none;
 }
 
-.digi-form-filter button {
-  --digi--color--background--primary: var(
-    --digi--color--background--inverted-4
-  );
+@media screen and (min-width: 1024px) {
+  .digi-form-filter button {
+    margin-right: var(--digi--margin--smaller);
+  }
 }
 
-[afFilterButtonText] {
-  --digi--color--background--primary: var(
-    --digi--color--background--inverted-4
-  );
+
+.digi-form-filter i.digi-form-filter__toggle-button-indicator--active::before {
+  background-color: var(--digi--color--background--inverted-4) !important;
 }
 
-.digi-button:hover {
-  background-color: var(--digi--color--text--link-hover);
+.digi-form-checkbox__box {
+  background-color: var(--digi--color--background--inverted-4) !important;
 }
