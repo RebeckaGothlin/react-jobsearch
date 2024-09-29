@@ -6,7 +6,7 @@ export const useFetchAds = () => {
   const { isPending, data, isError, error } = useQuery<AdsResponse>({
     queryKey: ['ads'],
     queryFn: async () => {
-      const { data } = await customFetch.get<AdsResponse>(`/search?q=`);
+      const { data } = await customFetch<AdsResponse>(`/search?q=`);
 
       console.log(data, 'from useFetchAds');
 
@@ -20,7 +20,7 @@ export const useFetchSingleAd = (id: string) => {
   const { isPending, data, isError, error } = useQuery<Ad>({
     queryKey: ['ads', id],
     queryFn: async () => {
-      const { data } = await customFetch.get<Ad>(`/ad/${id}`);
+      const { data } = await customFetch<Ad>(`/ad/${id}`);
 
       return data;
     },
@@ -32,7 +32,7 @@ export const useSearchSingleAd = (id: string) => {
   const { isPending, data, isError, error } = useQuery<Ad>({
     queryKey: ['ads', id],
     queryFn: async () => {
-      const { data } = await customFetch.get<Ad>(`/search/${id}`);
+      const { data } = await customFetch<Ad>(`/search/${id}`);
 
       return data;
     },

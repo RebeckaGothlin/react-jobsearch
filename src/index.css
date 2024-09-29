@@ -27,13 +27,14 @@
   display: flex;
   flex-direction: column;
 }
-/* navigation link item */ 
+/* navigation link item */
 .sc-digi-header-navigation-item {
- background-color: 2px solid var(--digi--color--background--inverted-4);
+  background-color: 2px solid var(--digi--color--background--inverted-4);
 }
 
 /* navigation link field */
-.sc-digi-header-navigation-h .digi-header-navigation__inner.sc-digi-header-navigation {
+.sc-digi-header-navigation-h
+  .digi-header-navigation__inner.sc-digi-header-navigation {
   list-style: none;
   margin: 0;
   display: flex;
@@ -77,23 +78,26 @@
   background-color: var(--digi--color--background--inverted-4) !important;
 }
 
-
 /* info card with left border*/
 .sc-digi-info-card-h .digi-info-card--border-left.sc-digi-info-card {
   border-width: 0 0 0 10px;
   border-color: var(--digi--color--background--inverted-4);
 }
 
-.logo {
+.logo img {
   display: inline-block;
   height: 45px;
   width: 45px;
 }
 
-img {
-  width: 44px;
-  height: 44px;
+.logo-none {
+  display: none;
 }
+
+/* img {
+  width: auto;
+  height: 2rem;
+} */
 /* hide logo*/
 .digi-logo svg {
   display: none;

@@ -1,3 +1,8 @@
+export type AdsResponse = {
+  hits: Ad[];
+  total: AdsPagination;
+};
+
 export type Ad = {
   id: string;
   external_id: string;
@@ -20,11 +25,10 @@ export type Ad = {
   };
 };
 
-export type AdsResponse = {
-  hits: Ad[];
+export type AdsPagination = {
+  total: TotalAds;
 };
 
-export type Log = {
-  name: string;
-  type: string;
+export type TotalAds = {
+  value: number;
 };

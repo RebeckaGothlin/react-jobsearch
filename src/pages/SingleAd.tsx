@@ -1,6 +1,13 @@
-import { LayoutBlockVariation } from '@digi/arbetsformedlingen';
+import {
+  LayoutBlockVariation,
+  LayoutContainerVariation,
+  LogoColor,
+  LogoVariation,
+} from '@digi/arbetsformedlingen';
 import {
   DigiLayoutBlock,
+  DigiLayoutContainer,
+  DigiLogo,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
 import { useLoaderData } from 'react-router-dom';
@@ -26,19 +33,32 @@ const SingleAd = () => {
   const sanitizedText = dompurify.sanitize(text ? text : '');
 
   return (
-    <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
-      <DigiTypography>
-        <h2>{data.headline}</h2>
+    <DigiLayoutContainer afVariation={LayoutContainerVariation.FLUID}>
+      <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
+        <DigiTypography>
+          <h2>{data.headline}</h2>
 
-        <p
-          dangerouslySetInnerHTML={{
-            __html: formatDescription(sanitizedText),
-          }}
-        />
-        <h1>{data.workplace_address?.municipality}</h1>
-        <h3>{data.salary_type.label}</h3>
-      </DigiTypography>
-    </DigiLayoutBlock>
+          {data.id ? (
+            <DigiLogo
+              afVariation={LogoVariation.LARGE}
+              afColor={LogoColor.PRIMARY}
+            >
+              <img src={data.logo_url} alt='' />
+            </DigiLogo>
+          ) : (
+            <DigiLogo class='logo-none' />
+          )}
+
+          <p
+            dangerouslySetInnerHTML={{
+              __html: formatDescription(sanitizedText),
+            }}
+          />
+          <h1>{data.workplace_address?.municipality}</h1>
+          <h3>{data.salary_type.label}</h3>
+        </DigiTypography>
+      </DigiLayoutBlock>
+    </DigiLayoutContainer>
   );
 };
 export default SingleAd;
