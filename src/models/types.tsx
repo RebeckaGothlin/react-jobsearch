@@ -19,6 +19,7 @@ export type Ad = {
   };
   workplace_address: {
     municipality: string;
+    region: string;
   };
   salary_type: {
     label: string;
@@ -31,4 +32,9 @@ export type AdsPagination = {
 
 export type TotalAds = {
   value: number;
+};
+
+export type WorkplaceAddress = {
+  municipality: string;
+  region: string;
 };

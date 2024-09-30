@@ -22,7 +22,7 @@ const Pagination = ({
 
   return (
     <DigiNavigationPagination
-      afTotalPages={Math.ceil(totalAds / 10)}
+      afTotalPages={Math.ceil(Math.min(totalAds, 2000) / 10)}
       afInitActivePage={currentPage}
       afCurrentResultStart={(currentPage - 1) * 10 + 1}
       afCurrentResultEnd={Math.min(currentPage * 10, totalAds)}

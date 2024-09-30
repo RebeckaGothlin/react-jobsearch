@@ -1,16 +1,33 @@
-import { LoaderFunctionArgs } from 'react-router-dom';
-import { customFetch } from '../api';
-import { Ad } from '../models/types';
+import { customSearchFetch } from '../api';
+import { SearchFilterResponse } from '../models/searchType';
 
-const url = (id: string) => `/search/`;
+const url = `/municipality`;
 
-export const loader = async ({
-  params,
-}: LoaderFunctionArgs<{ id: string }>): Promise<Ad> => {
-  const { id } = params;
-  if (!id) throw new Error('Ad ID is missing');
+export const loader = async () => {
+  try {
+    const response = await customSearchFetch.get(url);
 
-  const response = await customFetch(url(id));
-  const ad: Ad = response.data as Ad;
-  return ad;
+    // console.log('response:', response.data);
+
+    const municipalities: SearchFilterResponse[] =
+      response.data as SearchFilterResponse[];
+
+    const searchFilter = municipalities.map((item) => {
+      const {
+        'taxonomy/lau-2-code-2015': id,
+        'taxonomy/definition': municipality,
+      } = item;
+
+      return {
+        id,
+        municipality,
+      };
+    });
+    // console.log('🚀 ~ searchFilter ~ searchFilter:', searchFilter);
+
+    return searchFilter.length > 0 ? searchFilter : null;
+  } catch (error) {
+    console.error('Error fetching ads data:', error);
+    throw new Response('Failed to load ads', { status: 500 });
+  }
 };

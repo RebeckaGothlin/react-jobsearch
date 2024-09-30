@@ -22,24 +22,24 @@ import {
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
 import { useLoaderData } from 'react-router-dom';
-import { Ad } from '../models/types';
-import dompurify from 'dompurify';
 import { DigiFormInputSearchCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
+import { SearchFilterResponse } from '../models/searchType';
+import Filter from '../components/filters/Filter';
 
 const Search = () => {
-  const data = useLoaderData() as Ad;
+  const data = useLoaderData() as SearchFilterResponse[];
+  // console.log('🚀 ~ Search ~ data:', data);
 
-  const formatDescription = (text: string | undefined): string => {
-    if (!text) return '';
-    return text.replace(/\n/g, '<br />');
-  };
-
-  const text = data?.description.text;
-
-  const sanitizedText = dompurify.sanitize(text ? text : '');
+  // data.forEach((item) => {
+  //   console.log(item.municipality);
+  // });
 
   const handleInput = (event: DigiFormInputSearchCustomEvent<string>) => {
     console.log(event.target.value);
+  };
+
+  const optionOne = () => {
+    console.log(data);
   };
 
   return (
@@ -64,7 +64,8 @@ const Search = () => {
               afAutocomplete={`${handleInput}`}
             ></DigiFormInputSearch>
             <div className='digi-form-filter-container'>
-              <DigiFormFilter
+              <Filter />
+              {/* <DigiFormFilter
                 afFilterButtonText='Ort'
                 afSubmitButtonText='Filtrera'
                 afListItems={[
@@ -91,63 +92,7 @@ const Search = () => {
                     e.detail.checked
                   )
                 }
-              ></DigiFormFilter>
-              <DigiFormFilter
-                afFilterButtonText='Yrke'
-                afSubmitButtonText='Filtrera'
-                afListItems={[
-                  { id: 'omr1', label: 'Område 1' },
-                  { id: 'omr2', label: 'Område 2' },
-                  { id: 'omr3', label: 'Område 3' },
-                ]}
-                afCheckItems={['omr2']} // optional, override internal check state of component with filter ids
-                onAfChangeFilter={(e) =>
-                  console.log(e.detail.id, e.detail.isChecked)
-                }
-                onAfResetFilter={() => console.log('reset filter')}
-                onAfSubmitFilter={(e) =>
-                  console.log(
-                    'submit filter',
-                    e.detail.listItems,
-                    e.detail.checked
-                  )
-                }
-                onAfCloseFilter={(e) =>
-                  console.log(
-                    'submit filter',
-                    e.detail.listItems,
-                    e.detail.checked
-                  )
-                }
-              ></DigiFormFilter>
-              <DigiFormFilter
-                afFilterButtonText='Filter'
-                afSubmitButtonText='Filtrera'
-                afListItems={[
-                  { id: 'omr1', label: 'Område 1' },
-                  { id: 'omr2', label: 'Område 2' },
-                  { id: 'omr3', label: 'Område 3' },
-                ]}
-                afCheckItems={['omr2']} // optional, override internal check state of component with filter ids
-                onAfChangeFilter={(e) =>
-                  console.log(e.detail.id, e.detail.isChecked)
-                }
-                onAfResetFilter={() => console.log('reset filter')}
-                onAfSubmitFilter={(e) =>
-                  console.log(
-                    'submit filter',
-                    e.detail.listItems,
-                    e.detail.checked
-                  )
-                }
-                onAfCloseFilter={(e) =>
-                  console.log(
-                    'submit filter',
-                    e.detail.listItems,
-                    e.detail.checked
-                  )
-                }
-              ></DigiFormFilter>
+              ></DigiFormFilter> */}
             </div>
           </DigiLayoutBlock>
         </DigiTypography>
@@ -158,12 +103,6 @@ const Search = () => {
               afVariation={LayoutBlockVariation.PRIMARY}
               afVerticalPadding={true}
             >
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: formatDescription(sanitizedText),
-                }}
-              />
-
               <div>
                 företagets logo
                 <h1>rubrik med jobbtitel</h1>

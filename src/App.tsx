@@ -6,7 +6,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { loader as sandBoxLoader } from './loaders/sandboxLoader';
 import { loader as singleAdLoader } from './loaders/singleAdLoader';
-// import { loader as searchLoader } from './loaders/searchFieldLoader';
+import { loader as searchFieldLoader } from './loaders/searchFieldLoader';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -41,9 +41,9 @@ const router = createBrowserRouter([
         loader: sandBoxLoader,
       },
       {
-        path: 'search/',
+        path: '/search',
         element: <Search />,
-        // loader: paginationLoader,
+        loader: searchFieldLoader,
       },
     ],
   },

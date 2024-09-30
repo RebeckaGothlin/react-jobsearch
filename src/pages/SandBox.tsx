@@ -7,7 +7,6 @@ import {
 import {
   DigiLayoutColumns,
   DigiLink,
-  DigiLogo,
   DigiTypography,
   DigiTypographyTime,
 } from '@digi/arbetsformedlingen-react';
@@ -57,7 +56,6 @@ const SandBox = () => {
             publication_date,
             employer,
             workplace_address,
-            logo_url,
           } = ad;
 
           return (
@@ -75,13 +73,6 @@ const SandBox = () => {
                     >
                       {headline}
                     </DigiLink>
-                    {logo_url ? (
-                      <DigiLogo className='logo'>
-                        <img src={logo_url} alt='' />
-                      </DigiLogo>
-                    ) : (
-                      <DigiLogo className='logo-none' />
-                    )}
                   </h3>
                   <h4>
                     {employer?.name} - {workplace_address?.municipality}
