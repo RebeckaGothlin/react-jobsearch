@@ -1,26 +1,23 @@
-import { useLoaderData } from 'react-router-dom';
-import { SearchFilterResponse } from '../../models/searchType';
 import { DigiFormFilter } from '@digi/arbetsformedlingen-react';
+import { useLoaderData } from 'react-router-dom';
+import { RegionFilterResponse } from '../../models/searchType';
 
-const Filter = () => {
-  const data = useLoaderData() as SearchFilterResponse[];
-  console.log('🚀 ~ Filter ~ data:', data);
+const RegionFilter = () => {
+  const data = useLoaderData() as RegionFilterResponse[];
+  // console.log('🚀 ~ Filter ~ data:', data);
 
-  const municipalities = data.map((item) => ({
+  const regions = data.map((item) => ({
     id: item.id,
-    label: item.municipality,
+    label: item.region,
   }));
+  console.log('🚀 ~ regions ~ regions:', regions);
   //   console.log('🚀 ~ municipalities ~ municipalities:', municipalities);
-
-  municipalities.forEach((municipality) => {
-    console.log('TESTAR', municipality.label);
-  });
 
   return (
     <DigiFormFilter
-      afFilterButtonText='Ort'
+      afFilterButtonText='Region'
       afSubmitButtonText='Filtrera'
-      afListItems={municipalities}
+      afListItems={regions}
       afCheckItems={['omr2']} // optional, override internal check state of component with filter ids
       onAfChangeFilter={(e) => console.log(e.detail.id, e.detail.isChecked)}
       onAfResetFilter={() => console.log('reset filter')}
@@ -33,4 +30,4 @@ const Filter = () => {
     />
   );
 };
-export default Filter;
+export default RegionFilter;

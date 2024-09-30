@@ -16,18 +16,28 @@ import {
   DigiButton,
   DigiFormFilter,
   DigiFormInputSearch,
+  DigiFormSelect,
   DigiInfoCard,
   DigiLayoutBlock,
   DigiLayoutContainer,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
 import { useLoaderData } from 'react-router-dom';
-import { DigiFormInputSearchCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
-import { SearchFilterResponse } from '../models/searchType';
-import Filter from '../components/filters/Filter';
+import {
+  DigiFormInputSearchCustomEvent,
+  FormSelectValidation,
+  FormSelectVariation,
+} from '@digi/arbetsformedlingen/dist/types/components';
+import {
+  RegionFilterResponse,
+  SearchFilterResponse,
+} from '../models/searchType';
+import Filter from '../components/filters/MunicipalityFilter';
+import MunicipalityFilter from '../components/filters/MunicipalityFilter';
+import RegionFilter from '../components/filters/RegionFilter';
 
 const Search = () => {
-  const data = useLoaderData() as SearchFilterResponse[];
+  const data = useLoaderData() as RegionFilterResponse[];
   // console.log('🚀 ~ Search ~ data:', data);
 
   // data.forEach((item) => {
@@ -64,7 +74,8 @@ const Search = () => {
               afAutocomplete={`${handleInput}`}
             ></DigiFormInputSearch>
             <div className='digi-form-filter-container'>
-              <Filter />
+              <RegionFilter />
+              <MunicipalityFilter />
               {/* <DigiFormFilter
                 afFilterButtonText='Ort'
                 afSubmitButtonText='Filtrera'
