@@ -63,7 +63,11 @@ const Search = () => {
               afAutocomplete={`${handleInput}`}
             ></DigiFormInputSearch>
 
-            <DigiTag afText="Tagg" afSize={TagSize.SMALL} afNoIcon={false} />
+          <div className="tag-container">
+            <DigiTag afText="Tagg1" afSize={TagSize.SMALL} afNoIcon={false} />
+            <DigiTag afText="Tagg2" afSize={TagSize.SMALL} afNoIcon={false} />
+            <DigiTag afText="Tagg3" afSize={TagSize.SMALL} afNoIcon={false} />
+            </div>
             
             <div className="digi-form-filter-container">
               <RegionFilter />

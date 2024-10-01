@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div>
       <DigiHeader
-        afSystemName='Jobbsök'
+        afSystemName='Arbetsportalen'
         afHideSystemName={false}
         afMenuButtonText='Meny'
       >

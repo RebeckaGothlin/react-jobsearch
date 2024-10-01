@@ -19,6 +19,7 @@ Alternativt att listan hamnar till vänster direkt och man antingen har en place
 
 ## DigiTagg
 Under sökrutan läggs DigiTagg till för att visa vilka filter som är valda
+Tagg finns på plats, men det ska mappas så valda filter är markerade i dem. De ligger nu i en div med className tag-container som stylas tillsammans digi-form-filter-container som innehåller knapparna med filter direkt under
 
 ## Färgval
 Vi får gå igenom vad vi vill ha för färgschema, kontrollera att det håller AA eller ännu hellre AAA, och justera tills vi får bästa kontrast och användarvänlighet. 
@@ -26,7 +27,10 @@ Titta igenom vilka av Tokens vi behöver använda oss av och justera färgvärde
 Max antal färger
 
 ## Navigering
-Vad ska ingå i navigeringen? Vilka olika sidor ska man kunna komma till?
+Vad ska ingå i navigeringen? Vilka olika sidor ska man kunna komma till? Ska vi lägga med en länk som går vidare till Arbetsförmedlingen?
+
+## Footer
+Footern behöver justeras och ändras så den inte innehåller allt som hör till arbetsförmedlingen.
 
 # ReadMe
 Skriv en prydlig ReadMe som dokumenterar projektet

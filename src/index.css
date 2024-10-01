@@ -17,10 +17,14 @@
   --digi--color--icons--primary: #333;
 }
 
-.digi-form-filter-container {
+.digi-form-filter-container, .tag-container {
   display: flex;
   flex-direction: row;
   flex-wrap: 'wrap';
+}
+digi-tag {
+  margin-right: 0.3rem;
+
 }
 
 .header-container {
@@ -142,7 +146,13 @@
   margin-right: 0.625rem;
 }
 
+.ad-logo {
+  margin-top: 40px;
+}
 
+.single-ad-heading {
+  margin-top: 20px;
+}
 
 @media screen and (min-width: 1024px) {
   .digi-form-filter button {
