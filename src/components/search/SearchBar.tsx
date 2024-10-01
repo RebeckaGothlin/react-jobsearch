@@ -3,20 +3,14 @@ import {
   FormInputButtonVariation,
   FormInputSearchVariation,
   FormInputType,
-  FormSelectFilterValidation,
   LayoutBlockVariation,
 } from '@digi/arbetsformedlingen';
 import {
-  DigiFormCategoryFilter,
   DigiFormFilter,
-  DigiFormFilterPresentational,
   DigiFormInputSearch,
-  DigiFormSelectFilter,
   DigiLayoutBlock,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
-import MunicipalityFilter from '../filters/MunicipalityFilter';
-import RegionFilter from '../filters/RegionFilter';
 
 const SearchBar = () => {
   return (
@@ -38,7 +32,6 @@ const SearchBar = () => {
           // onAfOnInput={handleInput}
           // afAutocomplete={`${handleInput}`}
         />
-
         <DigiFormFilter
           className='test'
           afFilterButtonText='Yrkesområde'

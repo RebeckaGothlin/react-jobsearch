@@ -85,7 +85,7 @@
 }
 
 .digi-logo__img {
-  background-image: url('../public/icon.svg');
+  background-image: url('../public/icon3.svg');
   background-size: contain;
   background-repeat: no-repeat;
   width: 66px;
@@ -102,8 +102,44 @@
   background-color: var(--digi--color--background--inverted-3);
 }
 
+.region-modal-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+}
+.button-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+.icon-container {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  margin-right: 0.5rem;
+}
+
+.paperclip-icon {
+  margin-right: 0.625rem;
+}
+
 @media screen and (min-width: 1024px) {
   .digi-form-filter button {
     margin-right: var(--digi--margin--smaller);
   }
+}
+.digi-dialog__close-button {
+  display: none;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.span-container span {
+  margin-right: 0.5rem;
 }
