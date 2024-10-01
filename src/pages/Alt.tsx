@@ -33,7 +33,7 @@ const Alt = () => {
           onClick={expandModal}
         >
           <span className='button-content-container'>
-            En knapp
+            Länsnamn hamnar här på något magiskt vis
             <div className='icon-container'>
               <DigiIcon
                 className='paperclip-icon'
