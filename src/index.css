@@ -92,12 +92,10 @@
   height: 66px;
 }
 
-/* hide logo*/
+/* hide logo */
 .digi-logo svg {
   display: none;
 }
-
-/* end logo hiding*/
 
 /* info card in ad */
 .sc-digi-info-card-h .digi-info-card__content.sc-digi-info-card {
