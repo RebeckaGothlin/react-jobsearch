@@ -102,12 +102,24 @@
   background-color: var(--digi--color--background--inverted-3);
 }
 
-.region-modal-button {
+/* search filter region digi-button*/
+
+.sc-digi-button-h .digi-button--full-width.sc-digi-button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border: none;
+  font-weight: 500;
+  color: black;
 }
+
+.sc-digi-button-h .digi-button--full-width.sc-digi-button:hover {
+  background-color: var(--digi--color--background--inverted-3);
+  border-radius: 0;
+  border: none;
+}
+
+/* content container for modal region button */
 .button-content-container {
   display: flex;
   flex-direction: row;
@@ -124,6 +136,8 @@
 .paperclip-icon {
   margin-right: 0.625rem;
 }
+
+
 
 @media screen and (min-width: 1024px) {
   .digi-form-filter button {
