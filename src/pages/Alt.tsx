@@ -23,7 +23,7 @@ const Alt = () => {
         afHeading='Region'
         afPrimaryButtonText='Visa annonser'
         afVariation={DialogVariation.PRIMARY}
-        afCloseButtonText=''
+        afCloseButtonText='stäng' 
       >
         <DigiButton
         className='region-modal-button'
