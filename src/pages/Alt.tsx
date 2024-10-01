@@ -26,6 +26,7 @@ const Alt = () => {
         afCloseButtonText=''
       >
         <DigiButton
+        className='region-modal-button'
           afSize={ButtonSize.SMALL}
           afVariation={ButtonVariation.SECONDARY}
           afFullWidth={true}

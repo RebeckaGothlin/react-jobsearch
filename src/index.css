@@ -103,11 +103,14 @@
 }
 
 /* search filter region digi-button*/
-
-.sc-digi-button-h .digi-button--full-width.sc-digi-button {
+.region-modal-button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+}
+
+.sc-digi-button-h .digi-button--full-width.sc-digi-button {
   border: none;
   font-weight: 500;
   color: black;
