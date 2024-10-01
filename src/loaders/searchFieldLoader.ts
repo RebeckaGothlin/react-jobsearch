@@ -23,7 +23,7 @@ export const loader = async () => {
         municipality,
       };
     });
-    // console.log('🚀 ~ searchFilter ~ searchFilter:', searchFilter);
+    console.log('🚀 ~ searchFilter ~ searchFilter:', searchFilter);
 
     return searchFilter.length > 0 ? searchFilter : null;
   } catch (error) {

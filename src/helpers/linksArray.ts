@@ -11,6 +11,10 @@ export const navLinks = [
     href: '/search',
     label: 'SEARCH',
   },
+  {
+    href: '/alt',
+    label: 'ALT',
+  },
 ];
 
 export const autoComplete = [

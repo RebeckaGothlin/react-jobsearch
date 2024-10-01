@@ -7,8 +7,6 @@ export const loader = async () => {
   try {
     const response = await customSearchFetch.get(url);
 
-    // console.log('response:', response.data);
-
     const regions: RegionFilterResponse[] =
       response.data as RegionFilterResponse[];
 
@@ -25,7 +23,6 @@ export const loader = async () => {
           region,
         };
       });
-    // console.log('🚀 ~ searchFilter ~ searchFilter:', searchFilter);
 
     return searchFilter.length > 0 ? searchFilter : null;
   } catch (error) {

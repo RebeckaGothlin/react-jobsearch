@@ -14,30 +14,19 @@ import {
 } from '@digi/arbetsformedlingen';
 import {
   DigiButton,
-  DigiFormFilter,
   DigiFormInputSearch,
-  DigiFormSelect,
   DigiInfoCard,
   DigiLayoutBlock,
   DigiLayoutContainer,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
-import { useLoaderData } from 'react-router-dom';
-import {
-  DigiFormInputSearchCustomEvent,
-  FormSelectValidation,
-  FormSelectVariation,
-} from '@digi/arbetsformedlingen/dist/types/components';
-import {
-  RegionFilterResponse,
-  SearchFilterResponse,
-} from '../models/searchType';
-import Filter from '../components/filters/MunicipalityFilter';
+import { DigiFormInputSearchCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
 import MunicipalityFilter from '../components/filters/MunicipalityFilter';
 import RegionFilter from '../components/filters/RegionFilter';
+import SandBox from './SandBox';
 
 const Search = () => {
-  const data = useLoaderData() as RegionFilterResponse[];
+  // const data = useLoaderData() as RegionFilterResponse[];
   // console.log('🚀 ~ Search ~ data:', data);
 
   // data.forEach((item) => {
@@ -46,10 +35,6 @@ const Search = () => {
 
   const handleInput = (event: DigiFormInputSearchCustomEvent<string>) => {
     console.log(event.target.value);
-  };
-
-  const optionOne = () => {
-    console.log(data);
   };
 
   return (
@@ -76,37 +61,11 @@ const Search = () => {
             <div className='digi-form-filter-container'>
               <RegionFilter />
               <MunicipalityFilter />
-              {/* <DigiFormFilter
-                afFilterButtonText='Ort'
-                afSubmitButtonText='Filtrera'
-                afListItems={[
-                  { id: 'omr1', label: 'Område 1' },
-                  { id: 'omr2', label: 'Område 2' },
-                  { id: 'omr3', label: 'Område 3' },
-                ]}
-                afCheckItems={['omr2']} // optional, override internal check state of component with filter ids
-                onAfChangeFilter={(e) =>
-                  console.log(e.detail.id, e.detail.isChecked)
-                }
-                onAfResetFilter={() => console.log('reset filter')}
-                onAfSubmitFilter={(e) =>
-                  console.log(
-                    'submit filter',
-                    e.detail.listItems,
-                    e.detail.checked
-                  )
-                }
-                onAfCloseFilter={(e) =>
-                  console.log(
-                    'submit filter',
-                    e.detail.listItems,
-                    e.detail.checked
-                  )
-                }
-              ></DigiFormFilter> */}
             </div>
           </DigiLayoutBlock>
         </DigiTypography>
+
+        <SandBox />
 
         <DigiLayoutBlock afVariation={LayoutBlockVariation.TRANSPARENT}>
           <DigiTypography>

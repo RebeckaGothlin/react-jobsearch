@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://jobsearch.api.jobtechdev.se';
-const SEARCH_URL =
+const FILTER_URL =
   'https://taxonomy.api.jobtechdev.se/v1/taxonomy/specific/concepts';
 
 const customFetch = axios.create({
@@ -9,7 +9,7 @@ const customFetch = axios.create({
 });
 
 const customSearchFetch = axios.create({
-  baseURL: SEARCH_URL,
+  baseURL: FILTER_URL,
 });
 
 export { customFetch, customSearchFetch };

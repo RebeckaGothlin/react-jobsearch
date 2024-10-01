@@ -84,20 +84,14 @@
   border-color: var(--digi--color--background--inverted-4);
 }
 
-.logo img {
-  display: inline-block;
-  height: 45px;
-  width: 45px;
+.digi-logo__img {
+  background-image: url('../public/icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 66px;
+  height: 66px;
 }
 
-.logo-none {
-  display: none;
-}
-
-/* img {
-  width: auto;
-  height: 2rem;
-} */
 /* hide logo*/
 .digi-logo svg {
   display: none;

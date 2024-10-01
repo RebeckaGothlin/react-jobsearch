@@ -13,9 +13,7 @@ const Header = () => {
         afHideSystemName={false}
         afMenuButtonText='Meny'
       >
-        <a slot='header-logo' aria-label='Designsystemets startsida' href='/' className='digi-logo logo'>
-          <img src='/jobicon.png' alt='Vår egen Logo'/>
-        </a>
+        <a slot='header-logo' aria-label='Designsystemets startsida' href='/' />
 
         <div slot='header-navigation'>
           <DigiHeaderNavigation

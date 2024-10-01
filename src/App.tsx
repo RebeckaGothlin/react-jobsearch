@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { SingleAd, Landing, HomeLayout, SandBox, Search } from './pages';
+import { SingleAd, Landing, HomeLayout, SandBox, Search, Alt } from './pages';
 import AdsList from './pages/AdsList';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -45,6 +45,10 @@ const router = createBrowserRouter([
         path: '/search',
         element: <Search />,
         loader: regionFieldLoader,
+      },
+      {
+        path: '/alt',
+        element: <Alt />,
       },
     ],
   },
