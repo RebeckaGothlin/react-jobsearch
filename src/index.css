@@ -89,7 +89,7 @@ digi-tag {
 }
 
 .digi-logo__img {
-  background-image: url('../public/icon3.svg');
+  background-image: url('../public/icon.svg');
   background-size: contain;
   background-repeat: no-repeat;
   width: 66px;
