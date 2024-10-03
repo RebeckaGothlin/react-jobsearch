@@ -36,3 +36,4 @@ export const FooterWrapper = styled.div`
 grid-row: 4;
 grid-column:1;
 `;
+
