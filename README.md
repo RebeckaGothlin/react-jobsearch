@@ -29,8 +29,6 @@ Max antal färger
 ## Navigering
 Vad ska ingå i navigeringen? Vilka olika sidor ska man kunna komma till? Ska vi lägga med en länk som går vidare till Arbetsförmedlingen?
 
-## Footer
-Footern behöver justeras och ändras så den inte innehåller allt som hör till arbetsförmedlingen.
 
 # ReadMe
 Skriv en prydlig ReadMe som dokumenterar projektet

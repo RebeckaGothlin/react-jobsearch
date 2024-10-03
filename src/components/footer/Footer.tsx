@@ -3,121 +3,87 @@ import {
   FooterCardVariation,
   LogoVariation,
   LogoColor,
-} from '@digi/arbetsformedlingen';
+} from "@digi/arbetsformedlingen";
 import {
   DigiFooter,
   DigiFooterCard,
-  DigiIconAccessibilityUniversal,
-  DigiIconSign,
-  DigiIconGlobe,
-  DigiIconEnvelope,
   DigiIconExternalLinkAlt,
   DigiLogo,
-} from '@digi/arbetsformedlingen-react';
-import { Link } from 'react-router-dom';
+} from "@digi/arbetsformedlingen-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <>
-      <DigiFooter afVariation={FooterVariation.LARGE}>
-        <div slot='content-top'>
+      <DigiFooter afVariation={FooterVariation.SMALL}>
+        <div slot="content-top">
           <div>
             <DigiFooterCard afType={FooterCardVariation.ICON}>
-              <ul>
-                <li>
-                  <a href='#'>
-                    <DigiIconAccessibilityUniversal></DigiIconAccessibilityUniversal>
-                    Tillgänglighetsredogörelse
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <DigiIconSign></DigiIconSign>
-                    Teckenspråk
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <DigiIconGlobe></DigiIconGlobe>
-                    Other languages
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <DigiIconEnvelope></DigiIconEnvelope>
-                    Mejla vår funktionbrevlåda
-                  </a>
-                </li>
-              </ul>
-            </DigiFooterCard>
-          </div>
-          <div>
-            <DigiFooterCard>
-              <ul>
-                <li>
-                  <a href='#'>Tillgänglighetsredogörelse</a>
-                </li>
-                <li>
-                  <a href='#'>Teckenspråk</a>
-                </li>
-                <li>
-                  <a href='#'>Other languages</a>
-                  <br />
-                </li>
-                <li>
-                  <a href='#'>Mejla vår funktionbrevlåda</a>
-                </li>
-                <li>
-                  <a href='#'>Mejla vår funktionbrevlåda</a>
-                </li>
-                <li>
-                  <a href='#'>Mejla vår funktionbrevlåda</a>
-                </li>
-              </ul>
-            </DigiFooterCard>
-          </div>
-          <div>
-            <DigiFooterCard afType={FooterCardVariation.ICON}>
-              <h2>Fokus abacus dolores</h2>
+              <h2>Arbetsportalen</h2>
               <p>
-                Vivamus feugiat nunc vel enim fermentum dolores ab. Nuj vel enim
-                fermentum dolores abacus. Vivanna helam conkista
+                På Arbetsportalen kan du enkelt söka i de annonser som just nu
+                finns på Platsbanken. Du kan filtrera din sökning på
+                yrkesområde, region eller göra en fritextsökning.
+                <br />
+                Börja din resa mot ett nytt arbete redan idag!
               </p>
-              <a href='#'>
-                <DigiIconExternalLinkAlt></DigiIconExternalLinkAlt>
-                Mejla vår funktionbrevlåda
-              </a>
             </DigiFooterCard>
           </div>
           <div>
             <DigiFooterCard afType={FooterCardVariation.BORDER}>
-              <a href='#'>Forium dolores</a>
-              <p>Vivamus feugiat nunc vel enim fermentum, ac aliquet tortor.</p>
+              <a target="_blank" href="https://arbetsformedlingen.se/">
+                <DigiIconExternalLinkAlt />
+                Arbetsförmedlingen
+              </a>
+              <p>
+                Gå till Arbetsförmedlingens sida
+                <br /> Där kan du skriva in dig, aktivitetsrapportera mm
+              </p>
             </DigiFooterCard>
+          </div>
+          <div>
             <DigiFooterCard afType={FooterCardVariation.BORDER}>
-              <a href='#'>Leveante lipsum</a>
-              <p>Vivamus feugiat nunc vel enim.</p>
-            </DigiFooterCard>
-            <DigiFooterCard afType={FooterCardVariation.BORDER}>
-              <a href='#'>Acta estium</a>
-              <p>fermentum, ac aliquet tortor cursus. Curabitur cursus eros.</p>
+              <a
+                target="_blank"
+                href="https://arbetsformedlingen.se/for-arbetssokande/arbeta-i-sverige"
+              >
+                <DigiIconExternalLinkAlt />
+                Arbeta i Sverige
+              </a>
+              <p>
+                Rättigheter, skyldigheter, lön och förmåner - så fungerar det
+              </p>
             </DigiFooterCard>
           </div>
         </div>
-        <div slot='content-bottom-left'>
-          <Link to='/'>
+        <div slot="content-bottom-left">
+          <Link to="/">
             <DigiLogo
               afVariation={LogoVariation.LARGE}
               afColor={LogoColor.SECONDARY}
             ></DigiLogo>
           </Link>
         </div>
-        <div slot='content-bottom-right'>
-          <p>Följ oss på</p>
-          <a href='#'>Facebook</a>
-          <a href='#'>Youtube</a>
-          <a href='#'>Linkedin</a>
-          <a href='#'>Instagram</a>
+        <div slot="content-bottom-right">
+          <p>Följ Arbetsförmedlingen på</p>
+          <a target="_blank" href="https://www.facebook.com/Arbetsformedlingen">
+            Facebook
+          </a>
+          <a target="_blank" href="https://www.youtube.com/Arbetsformedlingen">
+            Youtube
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/company/arbetsformedlingen/"
+          >
+            Linkedin
+          </a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/arbetsformedlingen"
+          >
+            Instagram
+          </a>
         </div>
       </DigiFooter>
     </>

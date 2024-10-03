@@ -172,3 +172,9 @@ digi-tag {
 .span-container span {
   margin-right: 0.5rem;
 }
+
+
+.sc-digi-footer-card-h .digi-footer-card--border.sc-digi-footer-card {
+  --BORDER: none;
+ 
+}
