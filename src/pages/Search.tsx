@@ -11,8 +11,8 @@ import {
   InfoCardType,
   InfoCardVariation,
   LayoutBlockVariation,
-} from "@digi/arbetsformedlingen";
-import { TagSize } from "@digi/arbetsformedlingen"
+} from '@digi/arbetsformedlingen';
+import { TagSize } from '@digi/arbetsformedlingen';
 import {
   DigiButton,
   DigiFormInputSearch,
@@ -21,13 +21,12 @@ import {
   DigiLayoutContainer,
   DigiTypography,
   DigiTag,
-} from "@digi/arbetsformedlingen-react";
-import {
-  DigiFormInputSearchCustomEvent,
-} from "@digi/arbetsformedlingen/dist/types/components";
-import MunicipalityFilter from "../components/filters/MunicipalityFilter";
-import RegionFilter from "../components/filters/RegionFilter";
-import SandBox from "./SandBox";
+} from '@digi/arbetsformedlingen-react';
+import { DigiFormInputSearchCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
+import MunicipalityFilter from '../components/filters/MunicipalityFilter';
+import RegionFilter from '../components/filters/RegionFilter';
+import SandBox from './SandBox';
+import OccupationFilter from '../components/filters/OccupationFilter';
 
 const Search = () => {
   // const data = useLoaderData() as RegionFilterResponse[];
@@ -52,26 +51,26 @@ const Search = () => {
             afVerticalPadding={true}
           >
             <DigiFormInputSearch
-              afLabel="Sök"
+              afLabel='Sök'
               afVariation={FormInputSearchVariation.MEDIUM}
               afType={FormInputType.SEARCH}
               afButtonVariation={FormInputButtonVariation.PRIMARY}
               afButtonType={ButtonType.SUBMIT}
-              afButtonText="Sök"
+              afButtonText='Sök'
               onAfOnChange={handleInput}
               onAfOnInput={handleInput}
               afAutocomplete={`${handleInput}`}
             ></DigiFormInputSearch>
 
-          <div className="tag-container">
-            <DigiTag afText="Tagg1" afSize={TagSize.SMALL} afNoIcon={false} />
-            <DigiTag afText="Tagg2" afSize={TagSize.SMALL} afNoIcon={false} />
-            <DigiTag afText="Tagg3" afSize={TagSize.SMALL} afNoIcon={false} />
+            <div className='tag-container'>
+              <DigiTag afText='Tagg1' afSize={TagSize.SMALL} afNoIcon={false} />
+              <DigiTag afText='Tagg2' afSize={TagSize.SMALL} afNoIcon={false} />
+              <DigiTag afText='Tagg3' afSize={TagSize.SMALL} afNoIcon={false} />
             </div>
-            
-            <div className="digi-form-filter-container">
+
+            <div className='digi-form-filter-container'>
               <RegionFilter />
-              <MunicipalityFilter />
+              <OccupationFilter />
             </div>
           </DigiLayoutBlock>
         </DigiTypography>
@@ -95,7 +94,7 @@ const Search = () => {
                 <p>Anställningsform: blablabla</p>
               </div>
               <DigiInfoCard
-                afHeading="Kvalifikationer"
+                afHeading='Kvalifikationer'
                 afHeadingLevel={InfoCardHeadingLevel.H2}
                 afType={InfoCardType.TIP}
                 afVariation={InfoCardVariation.SECONDARY}
@@ -124,7 +123,7 @@ const Search = () => {
               </p>
 
               <DigiInfoCard
-                afHeading="Sök Jobbet"
+                afHeading='Sök Jobbet'
                 afHeadingLevel={InfoCardHeadingLevel.H2}
                 afType={InfoCardType.RELATED}
                 afVariation={InfoCardVariation.SECONDARY}
