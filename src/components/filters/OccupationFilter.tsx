@@ -127,6 +127,9 @@ const FilterModal = () => {
             </List>
           </RegionList>
 
+          {/* 
+MARK: DETTA ÄR ETT TEST
+ */}
           {activeColumnKey && (
             <MunicipalityList style={{ flex: 1 }}>
               <h4>Yrken</h4>
