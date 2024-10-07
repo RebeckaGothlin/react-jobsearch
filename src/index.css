@@ -1,5 +1,5 @@
-@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
-@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css';
+@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css";
+@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css";
 
 :root {
   margin: --digi--global--spacing--smallest-6;
@@ -17,23 +17,38 @@
   --digi--color--icons--primary: #333;
 }
 
-.digi-form-filter-container, .tag-container {
+.digi-form-filter-container,
+.tag-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: 'wrap';
+  flex-wrap: "wrap";
 }
+
 digi-tag {
   margin-right: 0.3rem;
-
 }
 
 .header-container {
   display: flex;
   flex-direction: column;
 }
+
 /* navigation link item */
 .sc-digi-header-navigation-item {
-  background-color: 2px solid var(--digi--color--background--inverted-4);
+  background-color: 0.125rem solid var(--digi--color--background--inverted-4);
+}
+
+.sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s > a:hover {
+  color: var(--digi--color--text--primary);
+}
+
+/* navigation close text */
+.sc-digi-button-h .digi-button.sc-digi-button {
+  color: var(--digi--color--background--inverted-1);
+}
+
+.sc-digi-button-h .digi-button.sc-digi-button:hover {
+  color: var(--digi--color--text--primary);
 }
 
 /* navigation link field */
@@ -48,7 +63,7 @@ digi-tag {
 /* line under navigation link in header */
 .digi-header-navigation-item--active.sc-digi-header-navigation-item-s > a {
   font-weight: bold;
-  box-shadow: inset 0 -4px 0 0 var(--digi--color--background--inverted-4);
+  box-shadow: inset 0 -0.25rem 0 0 var(--digi--color--background--inverted-4);
 }
 
 /* Search form label*/
@@ -62,6 +77,7 @@ digi-tag {
   color: var(--digi--color--text--primary);
   border: none;
 }
+
 /* search button hover state*/
 .sc-digi-button-h .digi-button--variation-primary.sc-digi-button:hover {
   background: var(--digi--color--text--link-hover);
@@ -72,6 +88,7 @@ digi-tag {
 .sc-digi-button svg {
   color: var(--digi--color--text--primary);
 }
+
 /* search filter buttons */
 .digi-form-filter i.digi-form-filter__toggle-button-indicator--active::before {
   background-color: var(--digi--color--background--inverted-4) !important;
@@ -84,16 +101,17 @@ digi-tag {
 
 /* info card with left border*/
 .sc-digi-info-card-h .digi-info-card--border-left.sc-digi-info-card {
-  border-width: 0 0 0 10px;
+  border-width: 0 0 0 0.625rem;
   border-color: var(--digi--color--background--inverted-4);
 }
 
+/* logo image */
 .digi-logo__img {
-  background-image: url('../public/icon.svg');
+  background-image: url("../public/icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 66px;
-  height: 66px;
+  width: 4.125rem;
+  height: 4.125rem;
 }
 
 /* hide logo */
@@ -111,13 +129,12 @@ digi-tag {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .sc-digi-button-h .digi-button--full-width.sc-digi-button {
   border: none;
   font-weight: 500;
-  color: black;
+  color: var(--digi--color--text--primary);
 }
 
 .sc-digi-button-h .digi-button--full-width.sc-digi-button:hover {
@@ -125,8 +142,6 @@ digi-tag {
   border-radius: 0;
   border: none;
 }
-
-
 
 /* content container for modal region button */
 .button-content-container {
@@ -136,6 +151,7 @@ digi-tag {
   align-items: center;
   padding: 0 0.5rem;
 }
+
 .icon-container {
   display: inline-flex;
   flex-wrap: nowrap;
@@ -147,18 +163,13 @@ digi-tag {
 }
 
 .ad-logo {
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 
 .single-ad-heading {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
-@media screen and (min-width: 1024px) {
-  .digi-form-filter button {
-    margin-right: var(--digi--margin--smaller);
-  }
-}
 .digi-dialog__close-button {
   display: none;
 }
@@ -173,8 +184,62 @@ digi-tag {
   margin-right: 0.5rem;
 }
 
-
 .sc-digi-footer-card-h .digi-footer-card--border.sc-digi-footer-card {
   --BORDER: none;
- 
+}
+
+/* footer links */
+.sc-digi-footer-card-h .digi-footer-card .sc-digi-footer-card-s a:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.125rem;
+}
+
+.sc-digi-footer-h .sc-digi-footer-s > [slot^="content-bottom-right"] a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.landing-wrapper {
+  padding: 40px;
+}
+
+.landing-wrapper h1, h2 {
+  text-align: center;
+}
+
+.landing-wrapper h2 {
+  margin-bottom: 40px;
+}
+
+.paragraph-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.paragraph-wrapper img {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .digi-form-filter button {
+    margin-right: var(--digi--margin--smaller);
+  }
+
+  .paragraph-wrapper img {
+    padding-right: 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .paragraph-wrapper {
+    grid-template-columns: 3fr 2fr; 
+    gap: 10px;
+    align-items: center;
+  }
+
+  .paragraph-wrapper img {
+    max-width: 100%;
+  }
 }
