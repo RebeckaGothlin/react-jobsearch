@@ -23,7 +23,6 @@ import {
   DigiTag,
 } from '@digi/arbetsformedlingen-react';
 import { DigiFormInputSearchCustomEvent } from '@digi/arbetsformedlingen/dist/types/components';
-import MunicipalityFilter from '../components/filters/MunicipalityFilter';
 import RegionFilter from '../components/filters/RegionFilter';
 import SandBox from './SandBox';
 import OccupationFilter from '../components/filters/OccupationFilter';
