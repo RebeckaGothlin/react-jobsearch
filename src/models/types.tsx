@@ -21,6 +21,9 @@ export type Ad = {
     municipality: string;
     region: string;
   };
+  employment_type: {
+    label: string;
+  };
   salary_type: {
     label: string;
   };
