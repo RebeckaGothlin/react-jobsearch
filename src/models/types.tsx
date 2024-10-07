@@ -19,6 +19,7 @@ export type Ad = {
   publication_date: string;
   employer: {
     name: string;
+    url: string;
   };
   workplace_address: {
     municipality: string;
@@ -42,6 +43,7 @@ export type Ad = {
   salary_description: string;
   conditions: string;
   application_contacts: {
+    name: string;
     description: string;
     email: string;
     telephone: string;
