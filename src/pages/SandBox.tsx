@@ -15,6 +15,7 @@ import { useLoaderData } from 'react-router-dom';
 import { Ad } from '../models/types';
 import Pagination from '../components/pagination/Pagination';
 import { customFetch } from '../api';
+import SearchBar from '../components/search/SearchBar';
 
 const SandBox = () => {
   const { total } = useLoaderData() as { total: number };
@@ -46,6 +47,7 @@ const SandBox = () => {
 
   return (
     <>
+      <SearchBar />
       <div className='card-container'>
         <Pagination totalAds={total} onPageChange={handlePageChange} />
 

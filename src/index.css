@@ -1,5 +1,5 @@
-@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css";
-@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css";
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css';
 
 :root {
   margin: --digi--global--spacing--smallest-6;
@@ -21,7 +21,7 @@
 .tag-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: "wrap";
+  flex-wrap: 'wrap';
 }
 
 digi-tag {
@@ -107,7 +107,7 @@ digi-tag {
 
 /* logo image */
 .digi-logo__img {
-  background-image: url("../public/icon.svg");
+  background-image: url('../public/icon.svg');
   background-size: contain;
   background-repeat: no-repeat;
   width: 4.125rem;
@@ -194,7 +194,7 @@ digi-tag {
   text-decoration-thickness: 0.125rem;
 }
 
-.sc-digi-footer-h .sc-digi-footer-s > [slot^="content-bottom-right"] a:hover {
+.sc-digi-footer-h .sc-digi-footer-s > [slot^='content-bottom-right'] a:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
 }
@@ -203,7 +203,8 @@ digi-tag {
   padding: 40px;
 }
 
-.landing-wrapper h1, h2 {
+.landing-wrapper h1,
+h2 {
   text-align: center;
 }
 
@@ -234,7 +235,7 @@ digi-tag {
 
 @media (min-width: 768px) {
   .paragraph-wrapper {
-    grid-template-columns: 3fr 2fr; 
+    grid-template-columns: 3fr 2fr;
     gap: 10px;
     align-items: center;
   }
@@ -242,4 +243,10 @@ digi-tag {
   .paragraph-wrapper img {
     max-width: 100%;
   }
+}
+
+.filter-buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }

@@ -11,6 +11,8 @@ import {
   DigiLayoutBlock,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
+import OccupationFilter from '../filters/OccupationFilter';
+import RegionFilter from '../filters/RegionFilter';
 
 const SearchBar = () => {
   return (
@@ -32,7 +34,11 @@ const SearchBar = () => {
           // onAfOnInput={handleInput}
           // afAutocomplete={`${handleInput}`}
         />
-        <DigiFormFilter
+        <div className='filter-buttons-container'>
+          <RegionFilter />
+          <OccupationFilter />
+        </div>
+        {/* <DigiFormFilter
           className='test'
           afFilterButtonText='Yrkesområde'
           afSubmitButtonText='Filtrera'
@@ -50,7 +56,7 @@ const SearchBar = () => {
           onAfCloseFilter={(e) =>
             console.log('submit filter', e.detail.listItems, e.detail.checked)
           }
-        />
+        /> */}
       </DigiLayoutBlock>
     </DigiTypography>
   );
