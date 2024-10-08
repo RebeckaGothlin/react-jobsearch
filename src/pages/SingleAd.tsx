@@ -63,32 +63,6 @@ const SingleAd = () => {
 
   return (
     <DigiLayoutContainer afVariation={LayoutContainerVariation.FLUID}>
-      <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
-        <DigiTypography>
-          {logo_url && logo_url.trim() ? (
-            <img
-              className="ad-logo"
-              src={logo_url}
-              alt="Företagets logotyp"
-              style={{ maxWidth: "200px", height: "auto" }}
-            />
-          ) : (
-            <span></span>
-          )}
-
-          <h2 className="single-ad-heading">{headline}</h2>
-
-          <p
-            dangerouslySetInnerHTML={{
-              __html: formatDescription(sanitizedText),
-            }}
-          />
-          <h1>{workplace_address?.municipality}</h1>
-          <h2>{employment_type.label}</h2>
-          <h3>{salary_type.label}</h3>
-        </DigiTypography>
-      </DigiLayoutBlock>
-
       <DigiLayoutBlock afVariation={LayoutBlockVariation.TRANSPARENT}>
         <DigiTypography>
           <DigiLayoutBlock
