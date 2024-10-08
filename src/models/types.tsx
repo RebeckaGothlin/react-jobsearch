@@ -42,14 +42,12 @@ export type Ad = {
   };
   salary_description: string;
   conditions: string;
-  application_contacts: {
-    name: string;
-    description: string;
-    email: string;
-    telephone: string;
-  };
+  application_contacts: ContactInfo[] | null
   application_details: {
+    information: string;
     reference: string;
+    email: string;
+    url: string;
   }
   must_have: Have;
   nice_to_have: Have;
@@ -57,6 +55,7 @@ export type Ad = {
   application_deadline: string;
   access_to_own_car: boolean;
   education_level: Have;
+  education: Have;
 };
 
 export type Have = {
@@ -84,3 +83,11 @@ export type WorkplaceAddress = {
   municipality: string;
   region: string;
 };
+
+export type ContactInfo = {
+  name:string
+  description: string
+  email: string
+  telephone: string
+  contact_type: string
+}

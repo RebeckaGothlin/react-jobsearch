@@ -199,18 +199,40 @@ digi-tag {
   text-decoration-thickness: 2px;
 }
 
+.about-job-heading {
+  margin-top: 1.25rem;
+}
+
+h2 {
+  text-align: left;
+}
+
+.digi-info-card h3 {
+  margin-top: 1.25rem;
+}
+
+.work-info-container {
+  margin-bottom: 1.25rem;
+}
+
 .landing-wrapper {
   padding: 40px;
 }
 
-.landing-wrapper h1,
-h2 {
+.landing-wrapper h1 {
   text-align: center;
 }
 
 .landing-wrapper h2 {
   margin-bottom: 40px;
 }
+
+.single-ad-wrapper ul {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
 
 .paragraph-wrapper {
   display: grid;
@@ -223,6 +245,76 @@ h2 {
   max-width: 100%;
 }
 
+.address-container {
+  display: flex;
+  align-items: flex-start;
+} 
+
+.marker-icon {
+  width: 1rem;
+  margin-right: 0.3rem;
+}
+
+.contact-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  width: 0.938rem;
+  margin-right: 0.3rem;
+}
+
+.employer-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.employer-container a {
+  display: flex;
+  align-items: center;
+}
+
+.external-link {
+  width: 1.1rem; 
+  margin-right: 0.3rem;
+}
+
+.apply-mail-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.at-icon {
+  width: 1.1rem;
+  margin-right: 0.3rem;
+}
+
+.application-mail {
+  margin-left: 1.25rem;
+}
+
+.apply-link-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.external-link-globe-icon {
+  width: 1.1rem;
+  margin-right: 0.3rem;
+}
+
+.external-link-button {
+  color: var(--digi--color--text--primary);
+  text-decoration: none;
+}
+
+.external-link-button:hover {
+  text-decoration: none;
+}
+
+
+
 @media screen and (min-width: 1024px) {
   .digi-form-filter button {
     margin-right: var(--digi--margin--smaller);
@@ -230,6 +322,10 @@ h2 {
 
   .paragraph-wrapper img {
     padding-right: 80px;
+  }
+
+  .digi-info-card {
+    width: 50%;
   }
 }
 
@@ -242,6 +338,10 @@ h2 {
 
   .paragraph-wrapper img {
     max-width: 100%;
+  }
+
+  .digi-info-card {
+    width: 75%;
   }
 }
 

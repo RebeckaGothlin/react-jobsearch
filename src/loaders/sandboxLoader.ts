@@ -22,3 +22,4 @@ export const loader = async () => {
     throw new Response('Failed to load ads', { status: 500 });
   }
 };
+
