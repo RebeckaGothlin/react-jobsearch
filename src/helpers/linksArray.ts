@@ -5,15 +5,7 @@ export const navLinks = [
   },
   {
     href: '/sand',
-    label: 'LEKLÅDAN',
-  },
-  {
-    href: '/search',
-    label: 'SEARCH',
-  },
-  {
-    href: '/alt',
-    label: 'ALT',
+    label: 'Hur stavar man annonngsnernere',
   },
 ];
 

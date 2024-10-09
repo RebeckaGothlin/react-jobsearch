@@ -1,6 +1,6 @@
 export type AdsResponse = {
   hits: Ad[];
-  total: AdsPagination;
+  total: TotalAds;
 };
 
 export type Ad = {
@@ -15,7 +15,7 @@ export type Ad = {
   };
   occupation_group: {
     label: string;
-  },
+  };
   publication_date: string;
   employer: {
     name: string;
@@ -42,13 +42,13 @@ export type Ad = {
   };
   salary_description: string;
   conditions: string;
-  application_contacts: ContactInfo[] | null
+  application_contacts: ContactInfo[] | null;
   application_details: {
     information: string;
     reference: string;
     email: string;
     url: string;
-  }
+  };
   must_have: Have;
   nice_to_have: Have;
   driving_license: GlobalInfoType[] | null;
@@ -64,12 +64,12 @@ export type Have = {
   work_experiences: GlobalInfoType[];
   education: GlobalInfoType[];
   education_level: GlobalInfoType[];
-}
+};
 
 export type GlobalInfoType = {
   weight?: unknown;
   label: string;
-}
+};
 
 export type AdsPagination = {
   total: TotalAds;
@@ -85,9 +85,9 @@ export type WorkplaceAddress = {
 };
 
 export type ContactInfo = {
-  name:string
-  description: string
-  email: string
-  telephone: string
-  contact_type: string
-}
+  name: string;
+  description: string;
+  email: string;
+  telephone: string;
+  contact_type: string;
+};

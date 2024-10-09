@@ -125,6 +125,12 @@ digi-tag {
 }
 
 /* search filter region digi-button*/
+.filter-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 .region-modal-button {
   display: flex;
   flex-direction: row;
@@ -233,7 +239,6 @@ h2 {
   padding: 0;
 }
 
-
 .paragraph-wrapper {
   display: grid;
   grid-template-columns: 1fr;
@@ -248,7 +253,7 @@ h2 {
 .address-container {
   display: flex;
   align-items: flex-start;
-} 
+}
 
 .marker-icon {
   width: 1rem;
@@ -276,7 +281,7 @@ h2 {
 }
 
 .external-link {
-  width: 1.1rem; 
+  width: 1.1rem;
   margin-right: 0.3rem;
 }
 
@@ -312,8 +317,6 @@ h2 {
 .external-link-button:hover {
   text-decoration: none;
 }
-
-
 
 @media screen and (min-width: 1024px) {
   .digi-form-filter button {

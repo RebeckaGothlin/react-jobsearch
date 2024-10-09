@@ -7,7 +7,7 @@ const HomeLayout = () => {
   return (
     <>
       <Header />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <Outlet />
       <Footer />
     </>
