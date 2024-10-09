@@ -1,0 +1,23 @@
+.card-container {
+    display: grid;
+    grid-template-rows:  1fr;
+    grid-template-columns: 1fr 2fr; 
+    gap: 15px;
+}
+
+.pagination {
+    grid-row: 1;
+    grid-column: 1 / span 3;
+}
+
+.header-container {
+    grid-row: 2;
+    display: flex;
+}
+
+.results-container {
+    grid-row: 2;
+    grid-column: 1 / span 3;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}

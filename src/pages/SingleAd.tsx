@@ -22,7 +22,7 @@ import {
   DigiLayoutContainer,
   DigiTypography,
 } from "@digi/arbetsformedlingen-react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import dompurify from "dompurify";
 import { Ad } from "../models/types";
 
@@ -33,8 +33,10 @@ import { Ad } from "../models/types";
 //
 //   }
 
+
 const SingleAd = () => {
   const data = useLoaderData() as Ad;
+  const navigate = useNavigate();
 
   const formatDescription = (text: string | undefined): string => {
     if (!text) return "";
@@ -91,6 +93,14 @@ const SingleAd = () => {
 
   return (
     <DigiLayoutContainer afVariation={LayoutContainerVariation.FLUID}>
+      <DigiButton 
+        afSize={ButtonSize.MEDIUM}
+        afType={ButtonType.BUTTON}
+        afVariation={ButtonVariation.SECONDARY}
+        onClick={() => navigate(-1)}
+      >
+        Tillbaka
+      </DigiButton>
       <DigiLayoutBlock afVariation={LayoutBlockVariation.TRANSPARENT}>
         <DigiTypography>
           <div className="single-ad-wrapper">
@@ -372,24 +382,32 @@ const SingleAd = () => {
                 </>
               )}
 
-              <h2>Arbetsgivaren</h2>
-              <p>
-                {employer.name}
-                <br />
-                <div className="employer-container">
-                  <a
-                    href={
-                      employer.url.startsWith("http")
-                        ? employer.url
-                        : `https://${employer.url}`
-                    }
-                    target="_blank"
-                  >
-                    <DigiIconExternalLinkAlt className="external-link" />
-                    <span>{employer.url}</span>
-                  </a>
-                </div>
-              </p>
+              {employer?.name && (
+                <>
+                  <h2>Arbetsgivaren</h2>
+                  <p>
+                    {employer.name}
+                    <br />
+                    {employer?.url && (
+                      <div className="employer-container">
+                        <a
+                          href={
+                            employer.url.startsWith("http")
+                              ? employer.url
+                              : `https://${employer.url}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <DigiIconExternalLinkAlt className="external-link" />
+                          <span>{employer.url}</span>
+                        </a>
+                      </div>
+                    )}
+                  </p>
+                </>
+              )}
+
 
               {application_contacts?.some((contact) => contact) && (
                 <>

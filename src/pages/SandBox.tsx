@@ -15,7 +15,7 @@ import { useLoaderData } from 'react-router-dom';
 import { Ad } from '../models/types';
 import Pagination from '../components/pagination/Pagination';
 import { customFetch } from '../api';
-import SearchBar from '../components/search/SearchBar';
+import '../styles/sandbox.css';
 
 const SandBox = () => {
   const { total } = useLoaderData() as { total: number };
@@ -45,11 +45,16 @@ const SandBox = () => {
     setCurrentPage(newPage);
   };
 
+
   return (
-    <>
-      <SearchBar />
+    <>      
       <div className='card-container'>
-        <Pagination totalAds={total} onPageChange={handlePageChange} />
+        <div className='pagination'>
+        <Pagination  totalAds={total} onPageChange={handlePageChange} />
+        </div>
+
+      <div className='results-container'>
+
 
         {ads.map((ad) => {
           const {
@@ -59,6 +64,7 @@ const SandBox = () => {
             employer,
             workplace_address,
           } = ad;
+
 
           return (
             <DigiLayoutColumns
@@ -79,9 +85,7 @@ const SandBox = () => {
                   <h4>
                     {employer?.name} - {workplace_address?.municipality}
                   </h4>
-                </div>
-                <div className='card-content'>
-                  <p>Här ska det vara yrkeskategori</p>
+                  <div className='card-content'>
                   <p>
                     Publicerad:{' '}
                     <span>
@@ -92,13 +96,17 @@ const SandBox = () => {
                     </span>
                   </p>
                 </div>
+        
+
+                </div>
               </DigiTypography>
             </DigiLayoutColumns>
           );
         })}
+        </div>
       </div>
     </>
   );
-};
+}
 
 export default SandBox;
