@@ -31,6 +31,9 @@ digi-tag {
 .header-container {
   display: flex;
   flex-direction: column;
+  width: 40svw;
+  padding: 1rem;
+  background-color: #f5f1f1;
 }
 
 /* navigation link item */

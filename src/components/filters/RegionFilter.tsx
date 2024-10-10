@@ -92,7 +92,6 @@ const FilterModal = () => {
         .map((m) => m.label)
     : [];
 
-  //! //////////////////////////////
   const handleOpenDialog = () => {
     setDialogOpen(true);
   };

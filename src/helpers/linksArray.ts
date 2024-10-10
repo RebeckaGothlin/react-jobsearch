@@ -5,7 +5,7 @@ export const navLinks = [
   },
   {
     href: '/sand',
-    label: 'Hur stavar man annonngsnernere',
+    label: 'Annonser',
   },
 ];
 

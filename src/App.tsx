@@ -49,8 +49,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <SearchProvider>
         <RouterProvider router={router} />
-        <ReactQueryDevtools initialIsOpen={false} />
       </SearchProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

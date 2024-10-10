@@ -9,7 +9,7 @@ import {
   InfoCardVariation,
   LayoutBlockVariation,
   LayoutContainerVariation,
-} from "@digi/arbetsformedlingen";
+} from '@digi/arbetsformedlingen';
 import {
   DigiButton,
   DigiIconAt,
@@ -21,30 +21,22 @@ import {
   DigiLayoutBlock,
   DigiLayoutContainer,
   DigiTypography,
-} from "@digi/arbetsformedlingen-react";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import dompurify from "dompurify";
-import { Ad } from "../models/types";
-
-// const logo =
-//   `https://www.arbetsformedlingen.se/rest/agas/api/v1/organisation/${}/logotyper/logo.png`;
-//
-//   const addLogo = () => {
-//
-//   }
-
+} from '@digi/arbetsformedlingen-react';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import dompurify from 'dompurify';
+import { Ad } from '../models/types';
 
 const SingleAd = () => {
   const data = useLoaderData() as Ad;
   const navigate = useNavigate();
 
   const formatDescription = (text: string | undefined): string => {
-    if (!text) return "";
-    return text.replace(/\n/g, "<br />");
+    if (!text) return '';
+    return text.replace(/\n/g, '<br />');
   };
 
   const text = data.description.text_formatted;
-  const sanitizedText = dompurify.sanitize(text ? text : "");
+  const sanitizedText = dompurify.sanitize(text ? text : '');
 
   const {
     headline,
@@ -69,7 +61,7 @@ const SingleAd = () => {
   } = data;
 
   const formatDeadline = (deadline: string): string => {
-    if (!deadline) return "Ingen deadline angiven";
+    if (!deadline) return 'Ingen deadline angiven';
 
     const date = new Date(deadline);
     const today = new Date();
@@ -77,12 +69,12 @@ const SingleAd = () => {
     const timeDifference = date.getTime() - today.getTime();
     const daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
 
-    const options: { day: "numeric"; month: "long"; year: "numeric" } = {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
+    const options: { day: 'numeric'; month: 'long'; year: 'numeric' } = {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
     };
-    const formattedDate = date.toLocaleDateString("sv-SE", options);
+    const formattedDate = date.toLocaleDateString('sv-SE', options);
 
     if (daysLeft < 0) {
       return `Ansökningstiden har gått ut (${formattedDate})`;
@@ -93,7 +85,7 @@ const SingleAd = () => {
 
   return (
     <DigiLayoutContainer afVariation={LayoutContainerVariation.FLUID}>
-      <DigiButton 
+      <DigiButton
         afSize={ButtonSize.MEDIUM}
         afType={ButtonType.BUTTON}
         afVariation={ButtonVariation.SECONDARY}
@@ -103,7 +95,7 @@ const SingleAd = () => {
       </DigiButton>
       <DigiLayoutBlock afVariation={LayoutBlockVariation.TRANSPARENT}>
         <DigiTypography>
-          <div className="single-ad-wrapper">
+          <div className='single-ad-wrapper'>
             <DigiLayoutBlock
               afVariation={LayoutBlockVariation.PRIMARY}
               afVerticalPadding={true}
@@ -111,22 +103,22 @@ const SingleAd = () => {
               <div>
                 {logo_url && logo_url.trim() ? (
                   <img
-                    className="ad-logo"
+                    className='ad-logo'
                     src={logo_url}
-                    alt="Företagets logotyp"
-                    style={{ maxWidth: "200px", height: "auto" }}
+                    alt='Företagets logotyp'
+                    style={{ maxWidth: '200px', height: 'auto' }}
                   />
                 ) : (
                   <span></span>
                 )}
-                <h1 className="single-ad-heading">{headline}</h1>
+                <h1 className='single-ad-heading'>{headline}</h1>
                 <h2>{employer.name}</h2>
                 <h3>
                   {occupation_group.label}
                   <br />
                   Kommun: {workplace_address.municipality}
                 </h3>
-                <div className="work-info-container">
+                <div className='work-info-container'>
                   <p>
                     Omfattning: {working_hours_type.label}
                     <br />
@@ -155,12 +147,12 @@ const SingleAd = () => {
                 nice_to_have.languages.some((language) => language.label) ||
                 driving_license?.some((license) => license.label)) && (
                 <DigiInfoCard
-                  afHeading="Kvalifikationer"
+                  afHeading='Kvalifikationer'
                   afHeadingLevel={InfoCardHeadingLevel.H2}
                   afType={InfoCardType.TIP}
                   afVariation={InfoCardVariation.SECONDARY}
                   afSize={InfoCardSize.STANDARD}
-                  className="digi-info-card"
+                  className='digi-info-card'
                 >
                   <div>
                     {(must_have.work_experiences.some(
@@ -219,7 +211,7 @@ const SingleAd = () => {
                               {must_have.education_level.map(
                                 (education_level, index) => (
                                   <li key={index}>
-                                    {education_level?.label}{" "}
+                                    {education_level?.label}{' '}
                                     {must_have.education[index]?.label &&
                                       `${must_have.education[index].label}`}
                                   </li>
@@ -332,7 +324,7 @@ const SingleAd = () => {
 
               {description.text && (
                 <>
-                  <h2 className="about-job-heading">Om jobbet</h2>
+                  <h2 className='about-job-heading'>Om jobbet</h2>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: formatDescription(sanitizedText),
@@ -354,8 +346,8 @@ const SingleAd = () => {
               )}
 
               <h3>Var ligger arbetsplatsen?</h3>
-              <p className="address-container">
-                <DigiIconMarkerFilled className="marker-icon" />
+              <p className='address-container'>
+                <DigiIconMarkerFilled className='marker-icon' />
 
                 {workplace_address?.street_address ? (
                   <>
@@ -367,8 +359,8 @@ const SingleAd = () => {
                   workplace_address?.municipality &&
                   workplace_address?.region && (
                     <>
-                      Arbetsplatsen ligger i kommunen{" "}
-                      {workplace_address.municipality} i{" "}
+                      Arbetsplatsen ligger i kommunen{' '}
+                      {workplace_address.municipality} i{' '}
                       {workplace_address.region}
                     </>
                   )
@@ -389,17 +381,17 @@ const SingleAd = () => {
                     {employer.name}
                     <br />
                     {employer?.url && (
-                      <div className="employer-container">
+                      <div className='employer-container'>
                         <a
                           href={
-                            employer.url.startsWith("http")
+                            employer.url.startsWith('http')
                               ? employer.url
                               : `https://${employer.url}`
                           }
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          target='_blank'
+                          rel='noopener noreferrer'
                         >
-                          <DigiIconExternalLinkAlt className="external-link" />
+                          <DigiIconExternalLinkAlt className='external-link' />
                           <span>{employer.url}</span>
                         </a>
                       </div>
@@ -408,13 +400,12 @@ const SingleAd = () => {
                 </>
               )}
 
-
               {application_contacts?.some((contact) => contact) && (
                 <>
                   <h2>Kontakt</h2>
                   {application_contacts?.map((contact, index) => (
-                    <p className="contact-container" key={index}>
-                      <DigiIconUserAlt className="contact-icon" />{" "}
+                    <p className='contact-container' key={index}>
+                      <DigiIconUserAlt className='contact-icon' />{' '}
                       <div>
                         {contact.name}
                         {contact.description}
@@ -430,7 +421,7 @@ const SingleAd = () => {
               )}
 
               <DigiInfoCard
-                afHeading="Sök jobbet"
+                afHeading='Sök jobbet'
                 afHeadingLevel={InfoCardHeadingLevel.H2}
                 afType={InfoCardType.RELATED}
                 afVariation={InfoCardVariation.SECONDARY}
@@ -449,11 +440,11 @@ const SingleAd = () => {
                   <div>
                     {application_details.email && (
                       <>
-                        <h3 className="apply-mail-container">
-                          <DigiIconAt className="at-icon" />
+                        <h3 className='apply-mail-container'>
+                          <DigiIconAt className='at-icon' />
                           Ansök via mejl
                         </h3>
-                        <p className="application-mail">
+                        <p className='application-mail'>
                           Mejla din ansökan till <br />
                           <a href={application_details.email}>
                             {application_details.email}
@@ -463,14 +454,14 @@ const SingleAd = () => {
                     )}
                     {application_details.url && (
                       <>
-                        <h3 className="apply-link-container">
-                          <DigiIconGlobe className="external-link-globe-icon" />
+                        <h3 className='apply-link-container'>
+                          <DigiIconGlobe className='external-link-globe-icon' />
                           Ansök via arbetsgivarens webbplats
                         </h3>
                         <a
                           href={application_details.url}
-                          className="external-link-button"
-                          target="_blank"
+                          className='external-link-button'
+                          target='_blank'
                         >
                           <DigiButton
                             afSize={ButtonSize.MEDIUM}
