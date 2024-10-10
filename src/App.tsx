@@ -23,12 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        // path: '/ads',
         element: <Landing />,
-      },
-      {
-        path: '/ads',
-        element: <AdsList />,
       },
       {
         path: 'ad/:id',
