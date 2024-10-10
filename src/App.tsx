@@ -1,10 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { SingleAd, Landing, HomeLayout, SandBox } from './pages';
-import AdsList from './pages/AdsList';
+import { SingleAd, Landing, HomeLayout, SandBox, AdsList } from './pages';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-import { loader as sandBoxLoader } from './loaders/sandboxLoader';
+import { loader as adsLoader } from './loaders/adsLoader';
 import { loader as singleAdLoader } from './loaders/singleAdLoader';
 import { SearchProvider } from './context/SearchContext';
 
@@ -31,9 +30,9 @@ const router = createBrowserRouter([
         loader: singleAdLoader,
       },
       {
-        path: '/sand',
-        element: <SandBox />,
-        loader: sandBoxLoader(queryClient),
+        path: '/ads',
+        element: <AdsList />,
+        loader: adsLoader(queryClient),
       },
     ],
   },

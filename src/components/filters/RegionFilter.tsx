@@ -73,11 +73,6 @@ const FilterModal = () => {
     label: item['taxonomy/definition'],
   }));
 
-  const alternativeRegions = regionsAltData?.map((item: AltRegion) => ({
-    id: item['taxonomy/id'],
-    label: item['taxonomy/definition'],
-  }));
-
   const allMunicipalities =
     municipalitiesData?.map((item: Municipality) => ({
       id: item['taxonomy/lau-2-code-2015'],

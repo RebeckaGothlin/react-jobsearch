@@ -1,57 +1,18 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/G18hJXPe)
+# Arbetsportalen - a version of Platsbanken
 
-# Case AF
+## 📄 About The Project
 
-Denna uppgift består av att ni behöver skapa er egna platsbank. Ni får lägga till precis den funktionalitet som ni själva tycker skall finnas med i denna applikation. För fler detaljer se pdf-filen som är bifogad till uppgiften på itslearning
-
-##
-
-Autocomplete URL
-https://taxonomy.api.jobtechdev.se/v1/taxonomy/suggesters/autocomplete?query-string=
-
-
-# Saker att lägga till
-
-## Grid
-Sidan bör byggas upp med grid - header på plats där den är, sökrutan under och sedan sökresultat-listan under det.  
-När man sedan öppnar en enskild annons flyttas resultatlistan till vänster och annonsen öppnas bredvid.  
-Alternativt att listan hamnar till vänster direkt och man antingen har en placeholdersida tills en annons har valts eller att första annonsen visas automatiskt. 
-
-## DigiTagg
-Under sökrutan läggs DigiTagg till för att visa vilka filter som är valda
-Tagg finns på plats, men det ska mappas så valda filter är markerade i dem. De ligger nu i en div med className tag-container som stylas tillsammans digi-form-filter-container som innehåller knapparna med filter direkt under
-
-## Färgval
-Vi får gå igenom vad vi vill ha för färgschema, kontrollera att det håller AA eller ännu hellre AAA, och justera tills vi får bästa kontrast och användarvänlighet. 
-Titta igenom vilka av Tokens vi behöver använda oss av och justera färgvärde på.
-Max antal färger
-
-## Navigering
-Vad ska ingå i navigeringen? Vilka olika sidor ska man kunna komma till? Ska vi lägga med en länk som går vidare till Arbetsförmedlingen?
-
-
-# ReadMe
-Skriv en prydlig ReadMe som dokumenterar projektet
-
-
-
-
-
-
-
-# Arbetsportalen
+**During the course "Javascript fördjupning" at Medieinstitutet, we were tasked with developing a webpage that allows users to search for job ads using Arbetsförmedlingen's API and Designsystem. The project was built using React and TypeScript, with a focus on enhancing skills in API integration, frontend development, and responsive design. We worked on creating a user-friendly interface that supports efficient job searches and provides detailed information on each position, directly sourced from Arbetsförmedlingen's database. Through this project, we gained hands-on experience with modern development tools and best practices in web application development.**
 
 ---
 
-#### Link to the project
+## 📷 Screenshots
 
+![Landing page](/public/screenshots/landing-page.png)
 
+![Ads page](/public/screenshots/ads-page.png)
 
----
-
-## 📄 About The Project 
-
-**During the course "Javascript fördjupning" at Medieinstitutet we were tasked with developing a webpage to search for job ads using Arbetsförmedlingen's API and Designsystem, React and TypeScript.**
+![Single ad page](/public/screenshots/single-ad-page.png)
 
 ---
 
@@ -71,19 +32,20 @@ Skriv en prydlig ReadMe som dokumenterar projektet
 
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
-
 ---
 
 ## ⚙️ How to run the project
 
 - #### **Clone the repository from GitHub:**
-    - git clone https://github.com/Medieinstitutet/case-af-teamfalukorv
+
+  - git clone https://github.com/Medieinstitutet/case-af-teamfalukorv
 
 - #### **Install the dependencies:**
-    - npm install
+
+  - npm install
 
 - #### **Start the developer server:**
-    - npm run dev
+  - npm run dev
 
 ---
 
@@ -94,6 +56,5 @@ Skriv en prydlig ReadMe som dokumenterar projektet
 [![Github](https://img.shields.io/badge/Jari%20Leminaho-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JariPii)[![LinkdIn](https://img.shields.io/badge/Jari%20Leminaho-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jari-leminaho-229726224/)
 
 [![Github](https://img.shields.io/badge/Rebecka%20Göthlin-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RebeckaGothlin) [![LinkdIn](https://img.shields.io/badge/Rebecka%20Göthlin-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rebecka-g%C3%B6thlin-963037280/)
-
 
 #### Published: 2024

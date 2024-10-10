@@ -3,20 +3,20 @@ import {
   FooterCardVariation,
   LogoVariation,
   LogoColor,
-} from "@digi/arbetsformedlingen";
+} from '@digi/arbetsformedlingen';
 import {
   DigiFooter,
   DigiFooterCard,
   DigiIconExternalLinkAlt,
   DigiLogo,
-} from "@digi/arbetsformedlingen-react";
-import { Link } from "react-router-dom";
+} from '@digi/arbetsformedlingen-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <>
       <DigiFooter afVariation={FooterVariation.SMALL}>
-        <div slot="content-top">
+        <div slot='content-top'>
           <div>
             <DigiFooterCard afType={FooterCardVariation.ICON}>
               <h2>Arbetsportalen</h2>
@@ -31,7 +31,11 @@ const Footer = () => {
           </div>
           <div>
             <DigiFooterCard afType={FooterCardVariation.BORDER}>
-              <a target="_blank" href="https://arbetsformedlingen.se/">
+              <a
+                rel='noopener noreferrer'
+                target='_blank'
+                href='https://arbetsformedlingen.se/'
+              >
                 <DigiIconExternalLinkAlt />
                 Arbetsförmedlingen
               </a>
@@ -44,8 +48,9 @@ const Footer = () => {
           <div>
             <DigiFooterCard afType={FooterCardVariation.BORDER}>
               <a
-                target="_blank"
-                href="https://arbetsformedlingen.se/for-arbetssokande/arbeta-i-sverige"
+                target='_blank'
+                href='https://arbetsformedlingen.se/for-arbetssokande/arbeta-i-sverige'
+                rel='noopener noreferrer'
               >
                 <DigiIconExternalLinkAlt />
                 Arbeta i Sverige
@@ -56,31 +61,41 @@ const Footer = () => {
             </DigiFooterCard>
           </div>
         </div>
-        <div slot="content-bottom-left">
-          <Link to="/">
+        <div slot='content-bottom-left'>
+          <Link to='/'>
             <DigiLogo
               afVariation={LogoVariation.LARGE}
               afColor={LogoColor.SECONDARY}
             ></DigiLogo>
           </Link>
         </div>
-        <div slot="content-bottom-right">
+        <div slot='content-bottom-right'>
           <p>Följ Arbetsförmedlingen på</p>
-          <a target="_blank" href="https://www.facebook.com/Arbetsformedlingen">
+          <a
+            target='_blank'
+            href='https://www.facebook.com/Arbetsformedlingen'
+            rel='noopener noreferrer'
+          >
             Facebook
           </a>
-          <a target="_blank" href="https://www.youtube.com/Arbetsformedlingen">
+          <a
+            target='_blank'
+            href='https://www.youtube.com/Arbetsformedlingen'
+            rel='noopener noreferrer'
+          >
             Youtube
           </a>
           <a
-            target="_blank"
-            href="https://www.linkedin.com/company/arbetsformedlingen/"
+            target='_blank'
+            href='https://www.linkedin.com/company/arbetsformedlingen/'
+            rel='noopener noreferrer'
           >
             Linkedin
           </a>
           <a
-            target="_blank"
-            href="https://www.instagram.com/arbetsformedlingen"
+            target='_blank'
+            href='https://www.instagram.com/arbetsformedlingen'
+            rel='noopener noreferrer'
           >
             Instagram
           </a>

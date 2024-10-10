@@ -4,7 +4,7 @@ export const navLinks = [
     label: 'Hem',
   },
   {
-    href: '/sand',
+    href: '/ads',
     label: 'Annonser',
   },
 ];
