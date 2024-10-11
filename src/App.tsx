@@ -7,6 +7,8 @@ import { loader as adsLoader } from './loaders/adsLoader';
 import { loader as singleAdLoader } from './loaders/singleAdLoader';
 import { SearchProvider } from './context/SearchContext';
 
+export const repo = "/react-jobsearch/";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -36,6 +38,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+  { basename: repo }
 ]);
 
 function App() {
